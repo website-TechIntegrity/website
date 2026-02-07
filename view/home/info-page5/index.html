@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Információk (5. oldal)</title>
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; }
+        
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #ffffff; 
+            color: #3c4043; 
+            font-family: 'Inter', sans-serif; 
+            font-size: 18px; 
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero-section { 
+            width: 100%; 
+            height: 100vh; 
+            position: relative; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden; 
+        }
+        .hero-section img { 
+            max-width: 90%; 
+            max-height: 80%; 
+            width: auto; 
+            height: auto; 
+            object-fit: contain; 
+        }
+        .scroll-down-arrow { 
+            position: absolute; 
+            bottom: 40px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            cursor: pointer; 
+            z-index: 10; 
+            animation: bounce 2s infinite; 
+        }
+        @keyframes bounce { 
+            0%, 20%, 50%, 80%, 100% {transform: translate(-50%, 0);} 
+            40% {transform: translate(-50%, -10px);} 
+            60% {transform: translate(-50%, -5px);} 
+        }
+
+        .main-content { 
+            width: 100%; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        
+        .section-divider { 
+            border: 0; 
+            height: 1px; 
+            background-color: #dadce0; 
+            margin: 0; 
+            width: 100%; 
+        }
+
+        .nav-bar { 
+            display: grid; 
+            grid-template-columns: 1fr auto 1fr; 
+            align-items: center; 
+            padding: 12px 0; 
+            border-bottom: 1px solid #dadce0; 
+            margin-bottom: 20px; 
+        }
+        .nav-center { display: flex; justify-content: center; }
+        .vissza-btn { 
+            background-color: #202124; 
+            color: #ffffff; 
+            text-decoration: none; 
+            padding: 7px 28px; 
+            font-size: 13px; 
+            font-weight: bold; 
+            border-radius: 4px; 
+        }
+
+        .nav-right { 
+            display: flex; 
+            justify-content: flex-end; 
+            align-items: center; 
+            gap: 6px; 
+        }
+        .page-text { 
+            font-weight: bold; 
+            font-size: 14px; 
+            margin: 0 12px; 
+            color: #000;
+        }
+        .arrow-btn { 
+            background-color: #202124; 
+            color: #ffffff; 
+            text-decoration: none; 
+            width: 30px; 
+            height: 30px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border-radius: 4px; 
+            font-size: 16px; 
+        }
+
+        .content-row { 
+            display: flex; 
+            gap: 40px; 
+            margin: 30px 0; 
+            align-items: flex-start; 
+        }
+        
+        .feature-col { 
+            width: 380px; 
+            flex-shrink: 0; 
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .feature-img { width: 100%; height: auto; border: 1px solid #eee; }
+
+        /* Sidebar Slider Fixed */
+        .side-slider-container {
+            position: relative;
+            width: 380px;
+            height: 480px;
+            overflow: hidden;
+            border: 1px solid #dadce0;
+        }
+        
+        .text-block { flex-grow: 1; }
+        .text-block h2 { 
+            margin: 0 0 15px 0; 
+            font-size: 34px; 
+            font-weight: bold; 
+            color: #000; 
+            text-align: center; 
+            line-height: 1.2;
+        }
+        .text-block p { 
+            margin: 0; 
+            font-size: 20px; 
+            line-height: 1.5; 
+            text-align: left; 
+            color: #3c4043; 
+        }
+
+        /* Main Slider */
+        .slider-container { 
+            position: relative; 
+            width: 550px; 
+            height: 650px;
+            flex-shrink: 0; 
+            overflow: hidden; 
+            border: 1px solid #dadce0;
+        }
+        .slider-wrapper { 
+            display: flex; 
+            height: 100%;
+        }
+        .slider-wrapper img { 
+            width: 100%; 
+            height: 100%; 
+            flex-shrink: 0; 
+            object-fit: contain; 
+            display: block;
+        }
+        
+        .slider-nav { 
+            position: absolute; 
+            top: 0; 
+            bottom: 0; 
+            left: 0; 
+            right: 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 10px; 
+            pointer-events: none; 
+            z-index: 5;
+        }
+        .slider-nav button { 
+            pointer-events: auto; 
+            background: rgba(255, 255, 255, 0.9); 
+            border: none; 
+            width: 44px; 
+            height: 44px; 
+            cursor: pointer; 
+            border-radius: 50%; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 20px;
+        }
+        .slider-container:hover .slider-nav button,
+        .side-slider-container:hover .slider-nav button { opacity: 1; }
+
+        .table-section { text-align: center; margin: 40px 0; }
+        .table-img { 
+            width: 100%; 
+            max-width: 650px; 
+            height: auto; 
+            margin: 0 auto 15px auto; 
+            border: 1px solid #dadce0; 
+            display: block;
+        }
+
+        .footer-nav { 
+            text-align: center; 
+            padding: 25px 0; 
+            color: #5f6368; 
+            font-size: 16px;
+        }
+        .bottom-spacer { height: 15px; width: 100%; }
+
+        @media (max-width: 950px) {
+            .content-row { flex-direction: column; align-items: center; }
+            .feature-col, .slider-container, .side-slider-container { width: 100%; max-width: 550px; }
+            .side-slider-container { height: 600px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <img src="https://database.techintegrity.hu/images/main-banner.png" alt="Banner">
+        <div class="scroll-down-arrow" onclick="document.getElementById('info-start').scrollIntoView({behavior: 'smooth'});">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#34A9DF" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+        </div>
+    </div>
+
+    <main class="main-content" id="info-start">
+        <div class="section-divider"></div>
+
+        <div class="nav-bar">
+            <div></div>
+            <div class="nav-center"><a href="../" class="vissza-btn">Vissza</a></div>
+            <div class="nav-right">
+                <span class="page-text">5/11</span>
+                <a href="../info-page1/" class="arrow-btn">↞</a>
+                <a href="../info-page4/" class="arrow-btn">←</a>
+                <a href="../info-page6/" class="arrow-btn">→</a>
+                <a href="../info-page11/" class="arrow-btn">↠</a>
+            </div>
+        </div>
+
+        <div class="content-row">
+            <div class="feature-col">
+                <img src="https://database.techintegrity.hu/images/website/rome_crop.png" alt="Rome" class="feature-img">
+                
+                <div class="side-slider-container">
+                    <div class="slider-wrapper" id="side-slider">
+                        <img src="https://database.techintegrity.hu/documents/M2-Page3.png" alt="Buffer Last">
+                        <img src="https://database.techintegrity.hu/documents/M2-Page1.png" alt="M2 P1">
+                        <img src="https://database.techintegrity.hu/documents/M2-Page2.png" alt="M2 P2">
+                        <img src="https://database.techintegrity.hu/documents/M2-Page3.png" alt="M2 P3">
+                        <img src="https://database.techintegrity.hu/documents/M2-Page1.png" alt="Buffer First">
+                    </div>
+                    <div class="slider-nav">
+                        <button onclick="sideManualBtn(-1)">❮</button>
+                        <button onclick="sideManualBtn(1)">❯</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-block">
+                <h2>Horváth Kevin, Január 1.<br>Boldog új évet kívánunk mindenkinek!</h2>
+                <p><b>Horváth Kevin Római politizálása és világjárása után a TechIntegrity Solutions dolgozik a "Három Pont" megvalósításán. A mai Január 1-jei tárgyalás volt az eddigi legnagyobb, többszázas tömeggel nagyon nehéz volt fenntartani az épületet.</b><br><br>
+                A mai döntőponton Horváth Kevin cégvezető ismét fogalmazott:<br><br>
+                <i>"Tudtam, hogy nem így lesz a legkönnyebb, de sikerült megcsinálni, amit eddig akart a cég a "Három Pont" tervéig. Kezdeni Berlinben egy darab zászlóval, majd ilyen sikeresen eljutni az új cégem legnagyobb tárgyalásáig. A 220 fős tömeg jelenléte kiabálta, hogy az előző 30 semmi volt."</i><br><br>
+                Beismerte, hogy <b>a "Három Pont" közelebb van a megvalósításához, mint valaha</b>. Tudta, hogy nem hagyhatja így a céget. A cég akaratai szerint egy konzultáción pedig létre lesz hozva a "Három Pont Szerződés", amely még nagyobb lesz a három darab pont érven belüli teljeskörű igazolásával és fontosnak tartásával, viszont ez még nem igazolt Horváth Kevin mesterinformatikus aláírásával.<br><br><a href="https://www.horvathkevin.hu" style="color: #1a73e8; text-decoration: none;">Horváth Kevin weboldala</a></p>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="content-row">
+            <div class="text-block" style="text-align: center;">
+                <h2 style="font-size: 30px;">Január 1.<br>Mai tárgyalás</h2>
+                <p style="text-align: center; font-size: 21px;">Az igért 14:30-i dokumentum a jobb oldalon látható!<br><br>
+		Köszönjük szépen minden támogatótól, vállalkozótól és egyéb politikával foglalkozóktól, hogy idáig juthattunk!<br><br>
+		A "Három Pont" megvalósítását már nem hogy Párizsból, Stockholmból vagy akár Budapestről, hanem már Rómából is látjuk.</p>
+            </div>
+            <div class="slider-container">
+                <div class="slider-wrapper" id="main-slider">
+                    <img src="https://database.techintegrity.hu/documents/M2-Page3.png" alt="Buffer Last">
+                    <img src="https://database.techintegrity.hu/documents/M2-Page1.png" alt="M2 P1">
+                    <img src="https://database.techintegrity.hu/documents/M2-Page2.png" alt="M2 P2">
+                    <img src="https://database.techintegrity.hu/documents/M2-Page3.png" alt="M2 P3">
+                    <img src="https://database.techintegrity.hu/documents/M2-Page1.png" alt="Buffer First">
+                </div>
+                <div class="slider-nav">
+                    <button onclick="mainManualBtn(-1)">❮</button>
+                    <button onclick="mainManualBtn(1)">❯</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="table-section">
+            <img src="https://database.techintegrity.hu/images/website/table.png" alt="Table" class="table-img">
+            <p style="font-size: 20px; color: #3c4043; font-weight: 500;">Véglegesített táblázat a TechIntegrity Solutions cégnél.</p>
+        </div>
+
+        <div class="section-divider"></div>
+        <div class="footer-nav">
+            Gyorsabban akarsz lapozni? <a href="../pages/" style="color: #1a73e8; text-decoration: none;">Oldalszámok megtekintése</a>
+        </div>
+        <div class="section-divider"></div>
+        <div class="bottom-spacer"></div>
+    </main>
+
+    <script>
+        function createSlider(wrapperId, width) {
+            const wrapper = document.getElementById(wrapperId);
+            const slides = wrapper.getElementsByTagName('img');
+            let index = 1;
+            let isTransitioning = false;
+            let timer;
+
+            wrapper.style.transform = `translateX(-${index * width}px)`;
+
+            function move(dir) {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                index += dir;
+                wrapper.style.transition = "transform 0.4s ease-in-out";
+                wrapper.style.transform = `translateX(-${index * width}px)`;
+
+                wrapper.addEventListener('transitionend', () => {
+                    isTransitioning = false;
+                    if (index === slides.length - 1) {
+                        wrapper.style.transition = "none";
+                        index = 1;
+                        wrapper.style.transform = `translateX(-${index * width}px)`;
+                    } else if (index === 0) {
+                        wrapper.style.transition = "none";
+                        index = slides.length - 2;
+                        wrapper.style.transform = `translateX(-${index * width}px)`;
+                    }
+                }, { once: true });
+            }
+
+            function startTimer() {
+                timer = setInterval(() => move(1), 4000);
+            }
+
+            startTimer();
+
+            return {
+                manual: (dir) => {
+                    clearInterval(timer);
+                    move(dir);
+                    startTimer();
+                }
+            };
+        }
+
+        const mainSlider = createSlider('main-slider', 550);
+        const sideSlider = createSlider('side-slider', 380);
+
+        function mainManualBtn(dir) { mainSlider.manual(dir); }
+        function sideManualBtn(dir) { sideSlider.manual(dir); }
+    </script>
+
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="FoDHPpTfa82aYR65Mze05";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>

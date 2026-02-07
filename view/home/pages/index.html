@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oldalak</title>
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .top-spacer {
+            width: 100%;
+            height: 20px;
+        }
+
+        .content-wrap {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .horizontal-line {
+            width: 100%;
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 0;
+        }
+
+        .vissza-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .vissza-button {
+            background-color: #292929;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 30px;
+            font-size: 12px;
+            border-radius: 2px;
+            transition: background-color 0.2s;
+        }
+
+        .vissza-button:hover {
+            background-color: #3d3d3d;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 400;
+            margin: 40px 0 30px 0;
+            color: #1a1a1a;
+        }
+
+        .page-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .page-links a {
+            color: #1a73e8;
+            text-decoration: underline;
+            font-size: 20px;
+        }
+
+        .page-links a:hover {
+            color: #174ea6;
+        }
+
+        .footer-note {
+            font-size: 24px;
+            color: #000000;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            .footer-note {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-spacer"></div>
+
+    <div class="horizontal-line"></div>
+
+    <div class="vissza-container">
+        <a href="../info-page1/" class="vissza-button">Vissza</a>
+    </div>
+
+    <div class="horizontal-line"></div>
+
+    <div class="content-wrap">
+        <h1>Információk</h1>
+
+        <div class="page-links">
+            <a href="http://info1.techintegrity.hu">1. oldal</a>
+            <a href="http://info2.techintegrity.hu">2. oldal</a>
+            <a href="http://info3.techintegrity.hu">3. oldal</a>
+            <a href="http://info4.techintegrity.hu">4. oldal</a>
+            <a href="http://info5.techintegrity.hu">5. oldal</a>
+            <a href="http://info6.techintegrity.hu">6. oldal</a>
+            <a href="http://info7.techintegrity.hu">7. oldal</a>
+            <a href="http://info8.techintegrity.hu">8. oldal</a>
+            <a href="http://info9.techintegrity.hu">9. oldal</a>
+            <a href="http://info10.techintegrity.hu">10. oldal</a>
+            <a href="http://info11.techintegrity.hu">11. oldal</a>
+        </div>
+
+        <p class="footer-note">A legutolsó mindig a legújabb, és a legelső mindig a legrégebbi!</p>
+    </div>
+
+    <div class="horizontal-line"></div>
+
+</body>
+</html>

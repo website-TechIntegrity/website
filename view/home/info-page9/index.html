@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Információk (9. oldal)</title>
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; }
+        
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #ffffff; 
+            color: #3c4043; 
+            font-family: 'Inter', sans-serif; 
+            font-size: 18px; 
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero-section { 
+            width: 100%; 
+            height: 100vh; 
+            position: relative; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden; 
+        }
+        .hero-section img { 
+            max-width: 90%; 
+            max-height: 80%; 
+            width: auto; 
+            height: auto; 
+            object-fit: contain; 
+        }
+        .scroll-down-arrow { 
+            position: absolute; 
+            bottom: 40px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            cursor: pointer; 
+            z-index: 10; 
+            animation: bounce 2s infinite; 
+        }
+        @keyframes bounce { 
+            0%, 20%, 50%, 80%, 100% {transform: translate(-50%, 0);} 
+            40% {transform: translate(-50%, -10px);} 
+            60% {transform: translate(-50%, -5px);} 
+        }
+
+        .main-content { 
+            width: 100%; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        
+        .section-divider { 
+            border: 0; 
+            height: 1px; 
+            background-color: #dadce0; 
+            margin: 0; 
+            width: 100%; 
+        }
+
+        .nav-bar { 
+            display: grid; 
+            grid-template-columns: 1fr auto 1fr; 
+            align-items: center; 
+            padding: 12px 0; 
+            border-bottom: 1px solid #dadce0; 
+            margin-bottom: 20px; 
+        }
+        .nav-center { display: flex; justify-content: center; }
+        .vissza-btn { 
+            background-color: #202124; 
+            color: #ffffff; 
+            text-decoration: none; 
+            padding: 7px 28px; 
+            font-size: 13px; 
+            font-weight: bold; 
+            border-radius: 4px; 
+        }
+
+        .nav-right { 
+            display: flex; 
+            justify-content: flex-end; 
+            align-items: center; 
+            gap: 6px; 
+        }
+        .page-text { 
+            font-weight: bold; 
+            font-size: 14px; 
+            margin: 0 12px; 
+            color: #000;
+        }
+        .arrow-btn { 
+            background-color: #202124; 
+            color: #ffffff; 
+            text-decoration: none; 
+            width: 30px; 
+            height: 30px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border-radius: 4px; 
+            font-size: 16px; 
+        }
+
+        .content-row { 
+            display: flex; 
+            gap: 40px; 
+            margin: 30px 0; 
+            align-items: flex-start; 
+        }
+        
+        .feature-col { 
+            width: 380px; 
+            flex-shrink: 0; 
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .feature-img { 
+            width: 100%; 
+            height: auto; 
+            border: 1px solid #eee; 
+            object-fit: cover;
+        }
+
+        .text-block { flex-grow: 1; }
+        .text-block h2 { 
+            margin: 0 0 15px 0; 
+            font-size: 34px; 
+            font-weight: bold; 
+            color: #000; 
+            text-align: center; 
+            line-height: 1.2;
+        }
+        .text-block p { 
+            margin: 0; 
+            font-size: 20px; 
+            line-height: 1.5; 
+            text-align: left; 
+            color: #3c4043; 
+        }
+
+        /* SLIDER WITH CROP FIX */
+        .slider-container { 
+            position: relative; 
+            width: 550px; 
+            height: 650px;
+            flex-shrink: 0; 
+            overflow: hidden; 
+            border: 1px solid #dadce0;
+        }
+        .slider-wrapper { 
+            display: flex; 
+            height: 100%;
+        }
+        .slider-wrapper img { 
+            width: 550px; 
+            height: 650px; 
+            flex-shrink: 0; 
+            object-fit: cover; 
+            display: block;
+        }
+        
+        .slider-nav { 
+            position: absolute; 
+            top: 0; 
+            bottom: 0; 
+            left: 0; 
+            right: 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 10px; 
+            pointer-events: none; 
+            z-index: 5;
+        }
+        .slider-nav button { 
+            pointer-events: auto; 
+            background: rgba(255, 255, 255, 0.9); 
+            border: none; 
+            width: 44px; 
+            height: 44px; 
+            cursor: pointer; 
+            border-radius: 50%; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 20px;
+        }
+        .slider-container:hover .slider-nav button { opacity: 1; }
+
+        .memory-section { text-align: center; margin: 40px 0; }
+        .memory-img { 
+            width: 100%; 
+            max-width: 650px; 
+            height: auto; 
+            margin: 0 auto 15px auto; 
+            border: 1px solid #dadce0; 
+            display: block;
+            object-fit: cover;
+        }
+
+        .footer-nav { 
+            text-align: center; 
+            padding: 25px 0; 
+            color: #5f6368; 
+            font-size: 16px;
+        }
+        .bottom-spacer { height: 15px; width: 100%; }
+
+        @media (max-width: 950px) {
+            .content-row { flex-direction: column; align-items: center; }
+            .feature-col, .slider-container { width: 100%; max-width: 550px; }
+            .slider-wrapper img { width: 100%; height: 500px; }
+            .slider-container { height: 500px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <img src="https://database.techintegrity.hu/images/main-banner.png" alt="Banner">
+        <div class="scroll-down-arrow" onclick="document.getElementById('info-start').scrollIntoView({behavior: 'smooth'});">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#34A9DF" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+        </div>
+    </div>
+
+    <main class="main-content" id="info-start">
+        <div class="section-divider"></div>
+
+        <div class="nav-bar">
+            <div></div>
+            <div class="nav-center"><a href="../" class="vissza-btn">Vissza</a></div>
+            <div class="nav-right">
+                <span class="page-text">9/11</span>
+                <a href="../info-page1/" class="arrow-btn">↞</a>
+                <a href="../info-page8/" class="arrow-btn">←</a>
+                <a href="../info-page10/" class="arrow-btn">→</a>
+                <a href="../info-page11/" class="arrow-btn">↠</a>
+            </div>
+        </div>
+
+        <div class="content-row">
+            <div class="feature-col">
+                <img src="https://database.techintegrity.hu/images/website/dubai_crop.png" alt="Dubai" class="feature-img">
+                <img src="https://database.techintegrity.hu/images/website/tis-kozpont_crop.png" alt="TIS Központ" class="feature-img">
+                <img src="https://database.techintegrity.hu/images/website/canberra1_crop.png" alt="Canberra" class="feature-img">
+            </div>
+            <div class="text-block">
+                <h2>Január 14.<br>Horváth Kevin:<br><span style="font-size: 30px;">"Ausztrália után azon dolgozunk, hogy a mellékügyvivők és mellékügyészek biztosítani tudják a cég anonim jelenlétét nyílt politikai értelemben.<br>Ezt most Dubaj dönti el. De az isztambuli ügyészek és ügyvivők nélkül ez se történt volna meg."</span></h2>
+                <p><b>Horváth Kevin világjáró 3 nap múlva ismét, erőteljesen követeli a kiválasztottak kikiáltását, viszont dátum nem volt megadva. Isztambultól Canberráig elhallgattak mindent, de a fogalmazásával bebizonyítja, hogy már nyilvánosabb lesz a Három Pont megvalósítása, a tech cég értelmében.</b><br><br>
+                Tudomásul vette Horváth Kevin, ahogy egy arábiai külhoni vitában fogalmazott (lefordítva angolról):<br><br>
+                <i>"[...] de ki hihette volna, hogy a Három Pontot eszmében félreraktuk, komolyan? Őszintén, ezt nem értem. [...] igen, de ez nem változtatja meg a helyzetet. Ha egy politikus korruptá válik, leváltják? Legalább is a saját érveink szerint itt Magyarországon nem. Viszont, ha egy informatikai cég tőzsdéje elveszti az értékét, nem tudja a beszállító láncot optimalizálni, mert nem maradt adott tervvel ami megvalósítaná (nálunk ez a Három Pont folyamata), és kénytelen bezárni a pontos finanszírozás hiánya miatt, akkor az a politika miatt hibás? Nem, mert nem függ össze. És a Három Pont? Sosem függött össze. [...] mégis hülyeséget mondasz. A szerződés, amit Ausztrália előtt az összes mellékvállalkozó megkötött Szalai Ákos (beleilletve őt is) tanácsadásával, pontosan megfogalmazza hogy semmi köze a politikához maga tech vállalathoz. [...] lehetetlen politizálás nélkül kezdeni egy napot, mert Berlinben is így kezdtem. Következik egy dupla világjárás, vissza Berlinbe és egy új országban. Viszontlátásra."</i><br><br>
+                Horváth Kevin legelső vitáján a cég jövőbeli felépítési struktúrájának az ötletét olyan jól megfogalmazta, hogy a vita után felmondtak az ellenkezők. Dubajban azt is említette, ahogy az utolsó mondaton látszik, hogy visszamegy Berlinbe, pont oda, ahol kezdte 2025 novemberében — ami kulcsfontosságú.<br><br><a href="https://www.horvathkevin.hu" style="color: #1a73e8; text-decoration: none;">Horváth Kevin weboldala</a></p>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="content-row">
+            <div class="text-block" style="text-align: center;">
+                <h2>Január 14.<br>Mai történetek</h2>
+                <p style="text-align: center; font-size: 21px;">Horváth Kevin mellékvállalkozói dolgoznak a hivatalos dátum megjelenítésén, mely majd lehetőleg részben összefoglalja, hogy melyik nap lesz a TechIntegrity Solutions alkalmas az isztambuli konferencián eldöntött irodai ügyvivők és belpolitikai ügyészek hivatalos nevük kikiáltására.<br><br>
+		Sok szó nincs elkapva, de a vitán a lényeg elkapható — legalább is a dátum, illetve a sok név kikiáltását nézve.</p>
+            </div>
+            <div class="slider-container">
+                <div class="slider-wrapper" id="slider">
+                    <img src="https://database.techintegrity.hu/images/website/canberra1.png" alt="Buffer">
+                    <img src="https://database.techintegrity.hu/images/website/dubai.png" alt="Dubai Slide">
+                    <img src="https://database.techintegrity.hu/images/website/canberra1.png" alt="Canberra Slide">
+                    <img src="https://database.techintegrity.hu/images/website/dubai.png" alt="Buffer">
+                </div>
+                <div class="slider-nav">
+                    <button onclick="manualBtn(-1)">❮</button>
+                    <button onclick="manualBtn(1)">❯</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="memory-section">
+            <img src="https://database.techintegrity.hu/images/website/berlin.png" alt="Berlin" class="memory-img">
+            <p style="font-size: 30px; color: #3c4043; font-weight: 500;">Régebbi kép és emlék: Horváth Kevin Berlinben, a non-cégi kezdetben.<br>Ahogy nemrég fogalmazott:<br>"Ekkor még egy zászló, egy politizálás. Ma már egy cég, több üzlet."</p>
+        </div>
+        <div class="section-divider"></div>
+        <div class="footer-nav">
+            Gyorsabban akarsz lapozni? <a href="../pages/" style="color: #1a73e8; text-decoration: none;">Oldalszámok megtekintése</a>
+        </div>
+        <div class="section-divider"></div>
+        <div class="bottom-spacer"></div>
+    </main>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const slides = slider.getElementsByTagName('img');
+        let index = 1;
+        let isTransitioning = false;
+        let timer;
+        const slideWidth = 550;
+
+        slider.style.transform = `translateX(-${index * slideWidth}px)`;
+
+        function move(dir) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            index += dir;
+            slider.style.transition = "transform 0.4s ease-in-out";
+            slider.style.transform = `translateX(-${index * slideWidth}px)`;
+
+            slider.addEventListener('transitionend', () => {
+                isTransitioning = false;
+                if (index === slides.length - 1) {
+                    slider.style.transition = "none";
+                    index = 1;
+                    slider.style.transform = `translateX(-${index * slideWidth}px)`;
+                } else if (index === 0) {
+                    slider.style.transition = "none";
+                    index = slides.length - 2;
+                    slider.style.transform = `translateX(-${index * slideWidth}px)`;
+                }
+            }, { once: true });
+        }
+
+        function manualBtn(dir) {
+            clearInterval(timer);
+            move(dir);
+            startTimer();
+        }
+
+        function startTimer() {
+            timer = setInterval(() => move(1), 4000);
+        }
+        startTimer();
+    </script>
+
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="FoDHPpTfa82aYR65Mze05";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>

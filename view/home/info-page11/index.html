@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Információk (11. oldal)</title>
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; }
+        
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #ffffff; 
+            color: #000000; 
+            font-family: 'Inter', sans-serif; 
+            font-size: 18px; 
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero-section { 
+            width: 100%; 
+            height: 100vh; 
+            position: relative; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden; 
+        }
+        .hero-section img { 
+            max-width: 90%; 
+            max-height: 80%; 
+            width: auto; 
+            height: auto; 
+            object-fit: contain; 
+        }
+
+        .scroll-down-arrow { 
+            position: absolute; 
+            bottom: 40px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            cursor: pointer; 
+            z-index: 10; 
+            animation: bounce 2s infinite; 
+        }
+        @keyframes bounce { 
+            0%, 20%, 50%, 80%, 100% {transform: translate(-50%, 0);} 
+            40% {transform: translate(-50%, -10px);} 
+            60% {transform: translate(-50%, -5px);} 
+        }
+
+        .main-content { 
+            width: 100%; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        
+        .section-divider { 
+            border: 0; 
+            height: 1px; 
+            background-color: #dadce0; 
+            margin: 0; 
+            width: 100%; 
+        }
+
+        .nav-bar { 
+            display: grid; 
+            grid-template-columns: 1fr auto 1fr; 
+            align-items: center; 
+            padding: 12px 0; 
+            border-bottom: 1px solid #dadce0; 
+            margin-bottom: 20px; 
+        }
+        .nav-center { display: flex; justify-content: center; }
+        .vissza-btn { 
+            background-color: #202124; 
+            color: #ffffff; 
+            text-decoration: none; 
+            padding: 7px 28px; 
+            font-size: 13px; 
+            font-weight: bold; 
+            border-radius: 4px; 
+        }
+
+        .nav-right { 
+            display: flex; 
+            justify-content: flex-end; 
+            align-items: center; 
+            gap: 6px; 
+        }
+        .page-text { 
+            font-weight: bold; 
+            font-size: 14px; 
+            margin: 0 12px; 
+            color: #000;
+        }
+        .arrow-btn { 
+            background-color: #202124; 
+            color: #ffffff; 
+            text-decoration: none; 
+            width: 30px; 
+            height: 30px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border-radius: 4px; 
+            font-size: 16px; 
+        }
+
+        .announcement-header { text-align: center; margin-bottom: 30px; }
+        .announcement-header h1 { font-size: 42px; margin: 0; color: #000; }
+        .announcement-header h2 { font-size: 42px; margin: 0px 0; color: #000; text-decoration: underline; }
+        .announcement-header h3 { font-size: 32px; margin: 0; color: #000000; }
+
+        .prose-text { 
+            font-size: 20px; 
+            text-align: justify; 
+            color: #202124; 
+            margin-bottom: 40px; 
+        }
+        .prose-text b { color: #000; }
+
+        .doc-section { text-align: center; margin: 50px 0; }
+        .doc-container {
+            width: 100%;
+            max-width: 1000px;
+            height: 1000px;
+            margin: 0 auto 20px auto;
+            overflow: hidden;
+        }
+        .doc-container a { display: block; width: 100%; height: 100%; }
+        .doc-container img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+        .redirect-link { 
+            display: block;
+            margin: 20px auto;
+            max-width: 600px;
+            font-size: 16px; 
+            color: #1a73e8; 
+            text-decoration: none; 
+            line-height: 1.4;
+        }
+        .redirect-link:hover { text-decoration: underline; }
+
+        .copyright-block {
+            text-align: center;
+            font-size: 14px;
+            color: #70757a;
+            margin: 40px 0;
+            line-height: 1.8;
+        }
+
+        .footer-nav { 
+            text-align: center; 
+            padding: 25px 0; 
+            color: #5f6368; 
+            font-size: 16px;
+        }
+	.bottom-spacer { height: 15px; width: 100%; }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <img src="https://database.techintegrity.hu/images/main-banner.png" alt="Banner">
+        <div class="scroll-down-arrow" onclick="document.getElementById('info-start').scrollIntoView({behavior: 'smooth'});">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#34A9DF" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </div>
+    </div>
+
+    <main class="main-content" id="info-start">
+        <div class="section-divider" style="margin-top: 0;"></div>
+
+        <div class="nav-bar">
+            <div></div>
+            <div class="nav-center"><a href="../" class="vissza-btn">Vissza</a></div>
+            <div class="nav-right">
+                <span class="page-text">11/11</span>
+                <a href="../info-page1/" class="arrow-btn">↞</a>
+                <a href="../info-page10/" class="arrow-btn">←</a>
+                <span class="arrow-btn" style="opacity: 0.3; cursor: default;">→</span>
+                <span class="arrow-btn" style="opacity: 0.3; cursor: default;">↠</span>
+            </div>
+        </div>
+
+        <div class="announcement-header">
+            <h1>2026. február 1.<br>Horváth Kevin vezérigazgató:</h1>
+            <h2>"A HÁROM PONT MEGVALÓSULT."</h2>
+            <h3>"Kész. Vége. 38 nap."</h3>
+        </div>
+
+        <div class="prose-text">
+            <p style="text-align: center;"><b>Február 1-jén a TechIntegrity Solutions Zrt. fő gazdasági terveit megfogalmazó és üzleti stratégiáját tervező folyamatot, a Három Pont projektet, hivatalosan megvalósításban részesítette a zártkörűen működő részvénytársaság. Horváth Kevin szómentessége és sikeres érzelmei mentén, Szalai Ákos a tárgyalás végén megdöbbenve fogalmazott:</b></p>
+            
+            <p style="text-align: center;"><i>"Ki. Ki? Egyszerűen ki? Ki gondolta volna? 38 nap kellett ahhoz, hogy megvalósuljon a főtervünk. Ez nem hogy 'hihetetlen', hanem sorsdöntő pillanat. Én magam, Szalai Ákos kommunikációs tanácsadó és politikát felülbíró, illetve döntést befolyásoló szemtanú; tudom, hogy az én közreműködésem nélkül sem történhetett volna meg ez, még akkor is ha ott volt a többi mellékvállalkozó és nemrég bejelentett 'auditóriumban foglalkozó'. Azonban váratlan volt, de nagyon. És hogyan? Horváth Kevin sietése, a folyamatos világjárásaival - volt, amikor naponta járt különböző kontinensekre - engedte azt, hogy ne csak a négy 'auditóriumon belüli egységek' döntsék el az előre megszervezett gazdasági terveket egy olyan hozzátartozó 'ügyészséggel', amelynek a fenntartásához eleve kell a Három Pont folyamat megvalósítása (mely már megvan), hanem hogy pont azt tudja a cég finanszírozni, a cég további gazdasági beindításához szükséges módján. Így több idő lesz a profit egy részének a hirdetésbe fektetése, a többit megtartva fontos esetekre - miközben a múltbeli, mára megszűntetett nyíltpolitika segítségének köszönhetően, kedvezményezünk a vásárlóknak is - mindenféle gépalkatrésziparon belüli áremelő krízis esetén is."</i> — <b>fejezte be mondatát, a Három Pont megvalósításából adódó "árkedvezményező" és "profitrészt hirdetésbe fektető" ígéreteivel. Ahogy láthatjuk: az üzlet tényleg beindult.</b></p>
+            
+            <p style="text-align: center;"><a href="https://www.horvathkevin.hu" target="_blank" style="color: #1a73e8; text-decoration: none;">Többet Horváth Kevinről</a></p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="doc-section">
+            <div class="doc-container">
+                <a href="https://www.techintegrity.hu/view/home/papers#h.jmhuhv3qgzy:~:text=Gy%C5%B1l%C3%A9s%20%C3%A9s%20t%C3%A1rgyal%C3%A1s%202026.%20febru%C3%A1r%201%2Dj%C3%A9n" target="_blank">
+                    <img src="https://database.techintegrity.hu/documents/M3-Page6.png" alt="Hivatalos Dokumentum">
+                </a>
+            </div>
+            
+            <a href="https://www.techintegrity.hu/view/home/papers#h.jmhuhv3qgzy:~:text=Gy%C5%B1l%C3%A9s%20%C3%A9s%20t%C3%A1rgyal%C3%A1s%202026.%20febru%C3%A1r%201%2Dj%C3%A9n" target="_blank" class="redirect-link">
+                A február 1-jei hivatalos tárgyalási és gyűlési dokumentum mind hat oldalának a megtekintéséhez kattints erre a képre, vagy erre a szövegre
+            </a>
+        </div>
+        </div>
+        <div class="section-divider"></div>
+        <div class="footer-nav">
+            Gyorsabban akarsz lapozni? <a href="../pages/" style="color: #1a73e8; text-decoration: none;">Oldalszámok megtekintése</a>
+        </div>
+        <div class="section-divider"></div>
+        <div class="bottom-spacer"></div>
+    </main>
+
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="FoDHPpTfa82aYR65Mze05";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>

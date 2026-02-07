@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Közzétett információk</title>
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --base-font-size: 18px;
+        }
+
+        * { box-sizing: border-box; }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #ffffff; 
+            color: #000; 
+            font-family: 'Inter', sans-serif; 
+            font-size: var(--base-font-size);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero-section { 
+            width: 100%; 
+            height: 100vh; 
+            position: relative; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden; 
+        }
+        .hero-section img { 
+            max-width: 90%; 
+            max-height: 80%; 
+            width: auto; 
+            height: auto; 
+            object-fit: contain; 
+        }
+        .scroll-down-arrow { 
+            position: absolute; 
+            bottom: 40px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            cursor: pointer; 
+            z-index: 10; 
+            animation: bounce 2s infinite; 
+        }
+        @keyframes bounce { 
+            0%, 20%, 50%, 80%, 100% {transform: translate(-50%, 0);} 
+            40% {transform: translate(-50%, -10px);} 
+            60% {transform: translate(-50%, -5px);} 
+        }
+
+        .main-content { 
+            width: 100%; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        .section-divider { 
+            border: 0; 
+            height: 1px; 
+            background-color: #dadce0; 
+            margin: 15px 0; 
+            width: 100%; 
+        }
+        .nav-bar { 
+            display: flex; 
+            justify-content: center; 
+            padding: 5px 0; 
+        }
+        .vissza-btn { 
+            background-color: #202124; 
+            color: #ffffff; 
+            text-decoration: none; 
+            padding: 10px 40px; 
+            font-size: 14px; 
+            font-weight: bold; 
+            border-radius: 4px; 
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 32px;
+            margin: 30px 0;
+            font-weight: 400;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            justify-items: center;
+            align-items: start;
+            margin: 20px 0;
+        }
+
+        .fb-post-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (max-width: 1050px) {
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .bottom-spacer { height: 60px; }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <img src="https://database.techintegrity.hu/images/main-banner.png" alt="Banner">
+        <div class="scroll-down-arrow" onclick="document.getElementById('info-start').scrollIntoView({behavior: 'smooth'});">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#34A9DF" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </div>
+    </div>
+
+    <main class="main-content" id="info-start">
+        <div class="section-divider" style="margin-top: 0;"></div>
+        <div class="nav-bar">
+            <a href="../" class="vissza-btn">Vissza</a>
+        </div>
+        <div class="section-divider"></div>
+
+        <h2 class="section-title">Facebook-posztok</h2>
+
+        <div class="posts-grid">
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhorvathkevin.official%2Fposts%2Fpfbid0ShLWU5ns4GnPHzmBLZkwxjrApQne62SqiPihv3nVEfAayzH4zPSr1g3mHu4Unbavl&show_text=true&width=500" width="500" height="695" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ojsKDsow5y2Xox1givydSGLKaSWk7CBqqh9EWp3xrHFkzvXCuJ2JxFur3tWnEUirl%26id%3D61587138862988&show_text=true&width=500" width="500" height="560" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="posts-grid">
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02U4x2C8pCjEwbZsZPpK2p5KhvG9smj5wLi7fARpyrfEP2U5vdjJpgbGdCJakMnHnZl%26id%3D61587382855911&show_text=true&width=500" width="500" height="800" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhorvathkevin.official%2Fposts%2Fpfbid02zejrGdabU3EPRVXsBVdy6bGTiMC1Mm4GHFsC2M1HEnDjmJVS3ybTnLq9fAQc2utjl&show_text=true&width=500" width="500" height="685" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="posts-grid">
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02G9eaAn4cUHsfRWBQDsMwQytaXd4f5T9Ks4Tnyhiku2dvEu9mkaJnMdE2GexSYbz4l%26id%3D61587138862988&show_text=true&width=500" width="500" height="589" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid023HdkEMU8n2DqhsBMSSCP46Zjf3Vjg3RF7Dnu13k6CGDgEopTMtFg4XfAU62rnjbhl%26id%3D61587382855911&show_text=true&width=500" width="500" height="750" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="posts-grid">
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhorvathkevin.official%2Fposts%2Fpfbid02yZwfiry5pEQEvoBqWf2voXm9s3B9wZjNsdckndHqFCfBR6TXWQZQMJLZ2HrDSYArl&show_text=true&width=500" width="500" height="675" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02DHYFVHUJaembbWti2jUvEFcCHYzJR6uZYHdf1qnDXLmYUvZkYfNXHR3VH2ESNSG5l%26id%3D61587382855911&show_text=true&width=500" width="500" height="650" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="posts-grid">
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0wW915aiydSbzYrL9tVaT2qGpnZNp5h3VNamMa8VtpULQfR1uwWbPcMMoEUk52EkCl%26id%3D61587138862988&show_text=true&width=500" width="500" height="735" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0ZmXTvxBMcusYeiRgjXcgNkPFhLAvYXzb6uRsayJmwyS1LmpwHRDnF2faMuCFVwPQl%26id%3D61587138862988&show_text=true&width=500" width="500" height="475" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="posts-grid">
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02kFiYArgHxYWSgEvs6FdvWMMzULvSJcP9NgvN1BJsyPo8oWNsgzDGVFd2fmmJE3Del%26id%3D61587138862988&show_text=true&width=500" width="500" height="735" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0bJ6YFnYnCyPRj1CNYctDC4FmzX3hLqVNhHRtziRcZHmTDfcLn6JQ4a73AkQvbTaql%26id%3D61587138862988&show_text=true&width=500" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="posts-grid">
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid07TyEy7vh4iGdcKhrADZyUkLa6KY4eA3KfcDKPsL7LU5WVMc1MghSKa3JpGX9YsXbl%26id%3D61587138862988&show_text=true&width=500" width="500" height="685" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhorvathkevin.official%2Fposts%2Fpfbid0kZxP8gyiauBEQQ9HEKvVE88RcN2QcPpAqhDbKuGPmFKLtfRn7MtP1D7tXBERn3gTl&show_text=true&width=500" width="500" height="655" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="posts-grid">
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhorvathkevin.official%2Fposts%2Fpfbid0aHzjAjPaUNCqJDeD6McWUu54ztL8ej8r7Mer8VayMxgH2aNRmFp7sq7vy2fQ4xxKl&show_text=true&width=500" width="500" height="528" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhorvathkevin.official%2Fposts%2Fpfbid06UR8EKBTpB7WFLQPktGeGFbZAp7SBL3q7iba5Rf2Ro1iYTNd9eJbezLHF3aftbCel&show_text=true&width=500" width="500" height="460" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="posts-grid">
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhorvathkevin.official%2Fposts%2Fpfbid02HXb5CxL8qkJidhKQBMcxKszpfuusMoXBdp6ujg1o7dLvH9uSv2zzDeHJt6mYaEPKl&show_text=true&width=500" width="500" height="675" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhorvathkevin.official%2Fposts%2Fpfbid0qFZWAj1DSeHXzZQipTUWRQvbocvMh7ZdR72zKjNGs7iMbbAK9JPARxmD2iwSJb6sl&show_text=true&width=500" width="500" height="655" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="posts-grid">
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhorvathkevin.official%2Fposts%2Fpfbid0XvHKTAfmoKfQ5HptWJUDu9dYvovg3EzrcZPZBpnzX8HuWm5UCzyMg4sgPZcq1YkCl&show_text=true&width=500" width="500" height="655" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhorvathkevin.official%2Fposts%2Fpfbid02xXz5PRRJwc9Hnv1BdQHpN2CPVRF5uDf1anMsQLEH8VQ1u6ak5DgZxrwDV3FJiCnWl&show_text=true&width=500" width="500" height="655" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="posts-grid">
+            <div class="fb-post-container">
+               <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhorvathkevin.official%2Fposts%2Fpfbid0g1EKDRW2DZLhWwfiAN7Xf1j842N4gxcyhKLGnWbiJuTsanbw9EyQTfqyLRxzNZwdl&show_text=true&width=500" width="500" height="765" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div class="fb-post-container">
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhorvathkevin.official%2Fposts%2Fpfbid02C5RbzENbDBYJ9dXmK7wi6vwjJkojYP3VFZqL5arn5pASavHSKd9LfszWA9QzCdUgl&show_text=true&width=500" width="500" height="820" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="bottom-spacer"></div>
+    </main>
+
+</body>
+</html>

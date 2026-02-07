@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Információk (1. oldal)</title>
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; }
+        
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #ffffff; 
+            color: #3c4043; 
+            font-family: 'Inter', sans-serif; 
+            font-size: 18px; 
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero-section { 
+            width: 100%; 
+            height: 100vh; 
+            position: relative; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden; 
+        }
+        .hero-section img { 
+            max-width: 90%; 
+            max-height: 80%; 
+            width: auto; 
+            height: auto; 
+            object-fit: contain; 
+        }
+        .scroll-down-arrow { 
+            position: absolute; 
+            bottom: 40px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            cursor: pointer; 
+            z-index: 10; 
+            animation: bounce 2s infinite; 
+        }
+        @keyframes bounce { 
+            0%, 20%, 50%, 80%, 100% {transform: translate(-50%, 0);} 
+            40% {transform: translate(-50%, -10px);} 
+            60% {transform: translate(-50%, -5px);} 
+        }
+
+        .main-content { 
+            width: 100%; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        
+        .section-divider { 
+            border: 0; 
+            height: 1px; 
+            background-color: #dadce0; 
+            margin: 0; 
+            width: 100%; 
+        }
+
+        .nav-bar { 
+            display: grid; 
+            grid-template-columns: 1fr auto 1fr; 
+            align-items: center; 
+            padding: 12px 0; 
+            border-bottom: 1px solid #dadce0; 
+            margin-bottom: 30px; 
+        }
+        .nav-center { display: flex; justify-content: center; }
+        .vissza-btn { 
+            background-color: #202124; 
+            color: #ffffff; 
+            text-decoration: none; 
+            padding: 7px 28px; 
+            font-size: 13px; 
+            font-weight: bold; 
+            border-radius: 4px; 
+        }
+
+        .nav-right { 
+            display: flex; 
+            justify-content: flex-end; 
+            align-items: center; 
+            gap: 6px; 
+        }
+        .page-text { 
+            font-weight: bold; 
+            font-size: 14px; 
+            margin: 0 12px; 
+            color: #000;
+        }
+        .arrow-btn { 
+            background-color: #202124; 
+            color: #ffffff; 
+            text-decoration: none; 
+            width: 30px; 
+            height: 30px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border-radius: 4px; 
+            font-size: 16px; 
+        }
+
+        .content-row { 
+            display: flex; 
+            gap: 40px; 
+            margin: 40px 0; 
+            align-items: flex-start; 
+        }
+        
+        .feature-img { 
+            width: 360px; 
+            height: auto; 
+            flex-shrink: 0; 
+        }
+        
+        .text-block { flex-grow: 1; }
+        .text-block h2 { 
+            margin: 0 0 12px 0; 
+            font-size: 32px; 
+            font-weight: bold; 
+            color: #000; 
+            text-align: left; 
+        }
+        .text-block p { 
+            margin: 0; 
+            font-size: 18px; 
+            line-height: 1.6; 
+            text-align: left; 
+            color: #3c4043; 
+        }
+
+        .slider-container { 
+            position: relative; 
+            width: 360px; 
+            flex-shrink: 0; 
+            overflow: hidden; 
+            border: 1px solid #dadce0;
+            background-color: #fcfcfc; 
+        }
+        .slider-wrapper { 
+            display: flex; 
+            transition: transform 0.4s ease-in-out; 
+        }
+        .slider-wrapper img { 
+            width: 360px; 
+            height: 500px; 
+            flex-shrink: 0; 
+            object-fit: contain; 
+            display: block;
+        }
+        
+        .slider-nav { 
+            position: absolute; 
+            top: 0; 
+            bottom: 0; 
+            left: 0; 
+            right: 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 10px; 
+            pointer-events: none; 
+        }
+        .slider-nav button { 
+            pointer-events: auto; 
+            background: rgba(255, 255, 255, 0.9); 
+            border: none; 
+            width: 34px; 
+            height: 34px; 
+            cursor: pointer; 
+            border-radius: 50%; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .slider-container:hover .slider-nav button { opacity: 1; }
+
+        .table-section { text-align: left; margin: 30px 0; }
+        .table-img { 
+            width: 100%; 
+            max-width: 550px; 
+            height: auto; 
+            margin-bottom: 15px; 
+            border: 1px solid #dadce0; 
+        }
+
+        .footer-nav { 
+            text-align: center; 
+            padding: 25px 0; 
+            color: #5f6368; 
+            font-size: 16px;
+        }
+        .bottom-spacer { height: 15px; width: 100%; }
+
+        @media (max-width: 850px) {
+            .content-row { flex-direction: column; align-items: center; }
+            .feature-img, .slider-container { width: 100%; max-width: 450px; }
+            .slider-wrapper img { width: 100%; height: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <img src="https://database.techintegrity.hu/images/main-banner.png" alt="Banner">
+        <div class="scroll-down-arrow" onclick="document.getElementById('info-start').scrollIntoView({behavior: 'smooth'});">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#34A9DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </div>
+    </div>
+
+    <main class="main-content" id="info-start">
+        <div class="section-divider"></div>
+
+        <div class="nav-bar">
+            <div></div>
+            <div class="nav-center"><a href="../" class="vissza-btn">Vissza</a></div>
+            <div class="nav-right">
+                <span class="page-text">1/11</span>
+                <a href="index.html" class="arrow-btn">↞</a>
+                <a href="index.html" class="arrow-btn">←</a>
+                <a href="../info-page2" class="arrow-btn">→</a>
+                <a href="../info-page11" class="arrow-btn">↠</a>
+            </div>
+        </div>
+
+        <div class="content-row">
+            <img src="https://database.techintegrity.hu/images/website/berlin.png" alt="Berlin" class="feature-img">
+            <div class="text-block">
+                <h2 style="text-align: center;">Horváth Kevin (CEO)</h2>
+                <p>Horváth Kevin mesterinformatikus, a TechIntegrity Solutions fő vezérigazgatója és alapítója már nem csak Magyarországot, hanem a világot is büszkén járja. Berlinben, német zászlóval a kezében terjesztette a politikai véleményeit Magyarországról és összehasonlította a Németországi különbségeket Magyarországgal, ami arra motiválta, hogy tovább fejlessze az informatikával és gépalkatrészekkel dolgozó, fogyasztóknak kedvezményező céget, amíg el nem kezdődött a TechIntegrity alapítása. Ő felelős a "Három Pont" folyamat megvalósításának az aláírásáért, és a politikai befolyásolásokon keresztül alapuló olcsóbb gépalkatrészek (CPU, GPU) és dráguló gépalkatrészek (RAM) jobb árának a létrehozataláért. <a href="https://www.horvathkevin.hu" style="color: #1a73e8; text-decoration: none;">Horváth Kevin weboldala</a></p>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="content-row">
+            <div class="slider-container">
+                <div class="slider-wrapper" id="slider">
+                    <img src="https://database.techintegrity.hu/documents/M1-Page2.png" alt="Slide">
+                    <img src="https://database.techintegrity.hu/images/website/budapest2.png" alt="Slide">
+                    <img src="https://database.techintegrity.hu/documents/M1-Page1.png" alt="Slide">
+                    <img src="https://database.techintegrity.hu/documents/M1-Page2.png" alt="Slide">
+                    <img src="https://database.techintegrity.hu/images/website/budapest2.png" alt="Slide">
+                </div>
+                <div class="slider-nav">
+                    <button onclick="manualBtn(-1)">❮</button>
+                    <button onclick="manualBtn(1)">❯</button>
+                </div>
+            </div>
+            <div class="text-block">
+		<h2 style="font-size: 25px; text-align: center;">Horváth Kevin jelenléte Budapesten, és a TechIntegrity által megtervezett 2025. December 25-ei tárgyalása</h2>
+                <p>A képek a bal oldalon a TechIntegrityre nézve mind valósak, és igazolhatók a TechIntegrity hivatalos jelenlétére vonatkozva.</p>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+        <div class="table-section">
+            <img src="https://database.techintegrity.hu/images/website/table.png" alt="Table" class="table-img">
+            <p style="font-size: 18px; color: #3c4043; text-align: left;">Cégre nézve szintén hivatalos, cég főtagjait bemutató táblázat Horváth Kevin cégalapítót beleilletve, mely a legelső tárgyalás terveződokumentumán is található.</p>
+        </div>
+
+        <div class="section-divider"></div>
+        <div class="footer-nav">
+            Gyorsabban akarsz lapozni? <a href="../pages/" style="color: #1a73e8; text-decoration: none;">Oldalszámok megtekintése</a>
+        </div>
+        <div class="section-divider"></div>
+        <div class="bottom-spacer"></div>
+    </main>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const slides = slider.getElementsByTagName('img');
+        let index = 1;
+        let isTransitioning = false;
+        let timer;
+
+        slider.style.transform = `translateX(-${index * 100}%)`;
+
+        function move(dir) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            index += dir;
+            slider.style.transition = "transform 0.4s ease-in-out";
+            slider.style.transform = `translateX(-${index * 100}%)`;
+
+            slider.addEventListener('transitionend', () => {
+                isTransitioning = false;
+                if (index === 0) {
+                    slider.style.transition = "none";
+                    index = slides.length - 2;
+                    slider.style.transform = `translateX(-${index * 100}%)`;
+                } else if (index === slides.length - 1) {
+                    slider.style.transition = "none";
+                    index = 1;
+                    slider.style.transform = `translateX(-${index * 100}%)`;
+                }
+            }, { once: true });
+        }
+
+        function manualBtn(dir) {
+            clearInterval(timer);
+            move(dir);
+            startTimer();
+        }
+
+        function startTimer() {
+            timer = setInterval(() => move(1), 3000);
+        }
+        startTimer();
+    </script>
+</body>
+</html>

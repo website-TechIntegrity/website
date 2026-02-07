@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üzletünk - TechIntegrity</title>
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #ffffff; 
+            color: #000; 
+            font-family: 'Inter', sans-serif; 
+            font-size: 18px; 
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hero-section { 
+            width: 100%; 
+            height: 100vh; 
+            position: relative; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden; 
+        }
+        .hero-section img { 
+            max-width: 90%; 
+            max-height: 80%; 
+            width: auto; 
+            height: auto; 
+            object-fit: contain; 
+        }
+        .scroll-down-arrow { 
+            position: absolute; 
+            bottom: 40px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            cursor: pointer; 
+            z-index: 10; 
+            animation: bounce 2s infinite; 
+        }
+        @keyframes bounce { 
+            0%, 20%, 50%, 80%, 100% {transform: translate(-50%, 0);} 
+            40% {transform: translate(-50%, -10px);} 
+            60% {transform: translate(-50%, -5px);} 
+        }
+        .main-content { 
+            width: 100%; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        .section-divider { 
+            border: 0; 
+            height: 1px; 
+            background-color: #dadce0; 
+            margin: 15px 0; 
+            width: 100%; 
+        }
+        .nav-bar { 
+            display: flex; 
+            justify-content: center; 
+            padding: 5px 0; 
+        }
+        .vissza-btn { 
+            background-color: #202124; 
+            color: #ffffff; 
+            text-decoration: none; 
+            padding: 10px 40px; 
+            font-size: 14px; 
+            font-weight: bold; 
+            border-radius: 4px; 
+        }
+        .document-title {
+            font-size: 32px;
+            font-weight: 400;
+            margin: 30px 0;
+            color: #000;
+            text-align: center;
+            max-width: 940px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .map-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 60px;
+            width: 100%;
+        }
+        .map-frame {
+            width: 100%;
+            max-width: 940px;
+            aspect-ratio: 16 / 9;
+            border: 0;
+        }
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .bottom-spacer { height: 40px; }
+        @media (max-width: 960px) {
+            .document-title { text-align: center; }
+            .map-frame { aspect-ratio: 4 / 3; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <img src="https://database.techintegrity.hu/images/main-banner.png" alt="Banner">
+        <div class="scroll-down-arrow" onclick="document.getElementById('info-start').scrollIntoView({behavior: 'smooth'});">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#34A9DF" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </div>
+    </div>
+    <main class="main-content" id="info-start">
+        <div class="section-divider" style="margin-top: 0;"></div>
+        <div class="nav-bar">
+            <a href="../" class="vissza-btn">Vissza</a>
+        </div>
+        <div class="section-divider"></div>
+        
+        <h2 class="document-title">Üzletünk térképe</h2>
+        
+        <div class="map-container">
+            <div class="map-frame">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2979.473595893648!2d17.786013!3d46.357623!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47681541892029a1%3A0x2ccbdaac16752afa!2sTechIntegrity%20K%C3%B6zpont%20-%20Kaposv%C3%A1r!5e1!3m2!1shu!2shu!4v1770490008526!5m2!1shu!2shu" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+        <div class="bottom-spacer"></div>
+    </main>
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="FoDHPpTfa82aYR65Mze05";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>
