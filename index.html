@@ -86,7 +86,7 @@
         <h1>VIGYÁZZ!</h1>
         <div class="divider"></div>
         <p>A weboldal megtekintése a legtöbb látogató számára nem ajánlott, mivel cégvállalkozóknak és politikával foglalkozóknak készült.</p>
-        <p>Amennyiben ennek ellenére mégis készen állsz a vállalati oldalt látni, megnyomhatod az alábbi gombot.</p>
+        <p>Amennyiben ennek ellenére mégis hozzájárulsz a honlap megtekintéséhez, megnyomhatod az alábbi gombot.</p>
         
         <div class="btn-container">
             <button onclick="grantAccess()" class="btn-access">IGEN, HOZZÁJÁRULOK</button>
@@ -96,7 +96,7 @@
     <script>
         function grantAccess() {
             localStorage.setItem('techintegrity_access', 'true');
-            window.location.href = 'view/home/index.html';
+            window.location.href = 'view/home';
         }
     </script>
 
