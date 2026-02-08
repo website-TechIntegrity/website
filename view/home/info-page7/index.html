@@ -147,26 +147,24 @@
             color: #3c4043; 
         }
 
-        .slider-container { 
-            position: relative; 
-            width: 550px; 
+        .slider-container {
+            position: relative;
+            width: 550px;
             height: 650px;
-            flex-shrink: 0; 
-            overflow: hidden; 
+            overflow: hidden;
             border: 1px solid #dadce0;
-            clip-path: inset(0 2px 0 0); 
+            background: white;
         }
-    
-        .slider-wrapper img { 
-            width: 100%; 
-            height: 100%; 
-            flex-shrink: 0; 
+
+        .slider-wrapper img {
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
             object-fit: cover;
             display: block;
-            
-            outline: 1px solid transparent;
-            margin-right: -1px;
+            transform: scale(1.02); 
             backface-visibility: hidden;
+            -webkit-perspective: 1000;
         }
 
         .slider-wrapper {
