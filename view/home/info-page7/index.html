@@ -218,9 +218,14 @@
 
         @media (max-width: 950px) {
             .content-row { flex-direction: column; align-items: center; }
-            .feature-col, .slider-container { width: 100%; max-width: 550px; }
-            .slider-container { height: 500px; }
-            .slider-wrapper img { width: 100%; height: 500px; }
+            .feature-col, .slider-container, .side-slider-container { 
+                width: 100%; 
+                max-width: 550px; 
+            }
+            .slider-container { height: auto; aspect-ratio: 550 / 650; }
+            .side-slider-container { height: auto; aspect-ratio: 380 / 480; }
+            
+            .slider-wrapper img { width: 100%; height: 100%; }
         }
     </style>
 </head>
@@ -301,47 +306,67 @@
     </main>
 
     <script>
-        const slider = document.getElementById('slider');
-        const slides = slider.getElementsByTagName('img');
-        let index = 1; 
-        let isTransitioning = false;
-        let timer;
-        const slideWidth = 550;
+        function createSlider(wrapperId) {
+            const wrapper = document.getElementById(wrapperId);
+            const slides = wrapper.getElementsByTagName('img');
+            let index = 1;
+            let isTransitioning = false;
+            let timer;
 
-        slider.style.transform = `translateX(-${index * slideWidth}px)`;
+            const getWidth = () => wrapper.parentElement.offsetWidth;
 
-        function move(dir) {
-            if (isTransitioning) return;
-            isTransitioning = true;
-            index += dir;
-            slider.style.transition = "transform 0.4s ease-in-out";
-            slider.style.transform = `translateX(-${index * slideWidth}px)`;
+            wrapper.style.transform = `translateX(-${index * getWidth()}px)`;
 
-            slider.addEventListener('transitionend', () => {
-                isTransitioning = false;
-                if (index === slides.length - 1) {
-                    slider.style.transition = "none";
-                    index = 1;
-                    slider.style.transform = `translateX(-${index * slideWidth}px)`;
-                } 
-                else if (index === 0) {
-                    slider.style.transition = "none";
-                    index = slides.length - 2;
-                    slider.style.transform = `translateX(-${index * slideWidth}px)`;
-                }
-            }, { once: true });
-        }
+            function move(dir) {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                
+                const currentWidth = getWidth();
+                index += dir;
+                
+                wrapper.style.transition = "transform 0.4s ease-in-out";
+                wrapper.style.transform = `translateX(-${index * currentWidth}px)`;
 
-        function manualBtn(dir) {
-            clearInterval(timer);
-            move(dir);
+                wrapper.addEventListener('transitionend', () => {
+                    isTransitioning = false;
+                    const freshWidth = getWidth();
+                    if (index === slides.length - 1) {
+                        wrapper.style.transition = "none";
+                        index = 1;
+                        wrapper.style.transform = `translateX(-${index * freshWidth}px)`;
+                    } else if (index === 0) {
+                        wrapper.style.transition = "none";
+                        index = slides.length - 2;
+                        wrapper.style.transform = `translateX(-${index * freshWidth}px)`;
+                    }
+                }, { once: true });
+            }
+
+            window.addEventListener('resize', () => {
+                wrapper.style.transition = "none";
+                wrapper.style.transform = `translateX(-${index * getWidth()}px)`;
+            });
+
+            function startTimer() {
+                timer = setInterval(() => move(1), 4000);
+            }
+
             startTimer();
+
+            return {
+                manual: (dir) => {
+                    clearInterval(timer);
+                    move(dir);
+                    startTimer();
+                }
+            };
         }
 
-        function startTimer() {
-            timer = setInterval(() => move(1), 3500);
-        }
-        startTimer();
+        const mainSlider = createSlider('main-slider');
+        const sideSlider = createSlider('side-slider');
+
+        function mainManualBtn(dir) { mainSlider.manual(dir); }
+        function sideManualBtn(dir) { sideSlider.manual(dir); }
     </script>
 
     <script>
