@@ -300,75 +300,60 @@
         <div class="bottom-spacer"></div>
     </main>
 
-        <script>
-                const slider = document.getElementById('slider');
-                const slides = slider.getElementsByTagName('img');
-                let index = 1; 
-                let isTransitioning = false;
-                let timer;
+    <script>
+        const slider = document.getElementById('slider');
+        const slides = slider.getElementsByTagName('img');
+        let index = 1; 
+        let isTransitioning = false;
+        let timer;
 
-                // The "getWidth" logic that ensures arrows move the right amount
-                function getSlideWidth() {
-                    return slider.offsetWidth / 1; // Measures the actual slider box
-                }
+        function getSlideWidth() {
+            return slider.offsetWidth;
+        }
 
-                // Initialize position
-                function updatePosition() {
+        function updatePosition() {
+            slider.style.transition = "none";
+            slider.style.transform = `translateX(-${index * getSlideWidth()}px)`;
+        }
+
+        function move(dir) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            index += dir;
+            slider.style.transition = "transform 0.4s ease-in-out";
+            slider.style.transform = `translateX(-${index * getSlideWidth()}px)`;
+
+            slider.addEventListener('transitionend', () => {
+                isTransitioning = false;
+                // Seamless loop logic
+                if (index === slides.length - 1) {
                     slider.style.transition = "none";
+                    index = 1;
+                    slider.style.transform = `translateX(-${index * getSlideWidth()}px)`;
+                } 
+                else if (index === 0) {
+                    slider.style.transition = "none";
+                    index = slides.length - 2;
                     slider.style.transform = `translateX(-${index * getSlideWidth()}px)`;
                 }
+            }, { once: true });
+        }
 
-                function move(dir) {
-                    if (isTransitioning) return;
-                    isTransitioning = true;
-                    
-                    index += dir;
-                    slider.style.transition = "transform 0.4s ease-in-out";
-                    slider.style.transform = `translateX(-${index * getSlideWidth()}px)`;
+        function manualBtn(dir) {
+            clearInterval(timer);
+            move(dir);
+            startTimer();
+        }
 
-                    slider.addEventListener('transitionend', () => {
-                        isTransitioning = false;
-                        if (index === slides.length - 1) {
-                            slider.style.transition = "none";
-                            index = 1;
-                            slider.style.transform = `translateX(-${index * getSlideWidth()}px)`;
-                        } 
-                        else if (index === 0) {
-                            slider.style.transition = "none";
-                            index = slides.length - 2;
-                            slider.style.transform = `translateX(-${index * getSlideWidth()}px)`;
-                        }
-                    }, { once: true });
-                }
+        function startTimer() {
+            timer = setInterval(() => move(1), 3500);
+        }
 
-                function manualBtn(dir) {
-                    clearInterval(timer);
-                    move(dir);
-                    startTimer();
-                }
-
-                function startTimer() {
-                    timer = setInterval(() => move(1), 3500);
-                }
-
-                window.addEventListener('load', updatePosition);
-                window.addEventListener('resize', updatePosition);
-                startTimer();
-
-                return {
-                manual: (dir) => {
-                    clearInterval(timer);
-                    move(dir);
-                    startTimer();
-                }
-            };
+        window.addEventListener('load', updatePosition);
+        window.addEventListener('resize', updatePosition);
         
-
-        const mainSlider = createSlider('main-slider');
-        const sideSlider = createSlider('side-slider');
-
-        function mainManualBtn(dir) { mainSlider.manual(dir); }
-        function sideManualBtn(dir) { sideSlider.manual(dir); }
+        startTimer();
     </script>
 
     <script>
