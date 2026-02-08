@@ -355,6 +355,7 @@
                 wrapper.addEventListener('transitionend', () => {
                     isTransitioning = false;
                     const freshWidth = getWidth();
+                    
                     if (index === slides.length - 1) {
                         wrapper.style.transition = "none";
                         index = 1;
