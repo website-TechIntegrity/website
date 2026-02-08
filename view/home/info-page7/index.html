@@ -155,18 +155,16 @@
             overflow: hidden; 
             border: 1px solid #dadce0;
         }
-        .slider-wrapper { 
-            display: flex; 
+        .slider-wrapper {
+            display: flex;
             height: 100%;
+            will-change: transform;
         }
-        .slider-wrapper img { 
-            width: 550px; 
-            height: 650px; 
-            flex-shrink: 0; 
-            object-fit: cover;
-            display: block;
+
+        .slider-wrapper img {
+            width: 100%;
+            flex-shrink: 0;
         }
-        
         .slider-nav { 
             position: absolute; 
             top: 0; 
@@ -217,27 +215,11 @@
         .bottom-spacer { height: 15px; width: 100%; }
 
         @media (max-width: 950px) {
-                .content-row { 
-                    flex-direction: column; 
-                    align-items: center; 
-                    gap: 20px; 
-                }
-                .feature-col, .slider-container { 
-                    width: 100%; 
-                    max-width: 100%; 
-                }
-                .slider-container { 
-                    height: auto; 
-                    aspect-ratio: 550 / 650; 
-                }
-                .slider-wrapper img { 
-                    width: 100%; 
-                    height: 100%; 
-                    object-fit: cover; 
-                }
-                .text-block h2 { font-size: 26px; }
-                .text-block p { font-size: 18px; }
-            }
+            .content-row { flex-direction: column; align-items: center; }
+            .feature-col, .slider-container { width: 100%; max-width: 550px; }
+            .slider-container { height: 500px; }
+            .slider-wrapper img { width: 100%; height: 500px; }
+        }
     </style>
 </head>
 <body>
@@ -319,44 +301,38 @@
     <script>
         const slider = document.getElementById('slider');
         const slides = slider.getElementsByTagName('img');
-        let index = 1; 
+        let index = 1;
         let isTransitioning = false;
         let timer;
 
         function getSlideWidth() {
-            return slider.parentElement.offsetWidth;
+            return slider.parentElement.clientWidth;
         }
 
-        function updatePosition() {
-            const width = getSlideWidth();
-            slider.style.transition = "none";
-            slider.style.transform = `translateX(-${index * width}px)`;
+        function setPosition(animate = false) {
+            const slideWidth = getSlideWidth();
+            slider.style.transition = animate ? "transform 0.4s ease-in-out" : "none";
+            slider.style.transform = `translateX(-${index * slideWidth}px)`;
         }
 
-        updatePosition();
-        window.addEventListener('resize', updatePosition);
+        setPosition(false);
 
         function move(dir) {
             if (isTransitioning) return;
             isTransitioning = true;
-            
-            const width = getSlideWidth();
             index += dir;
-            
-            slider.style.transition = "transform 0.4s ease-in-out";
-            slider.style.transform = `translateX(-${index * width}px)`;
+            setPosition(true);
 
             slider.addEventListener('transitionend', () => {
                 isTransitioning = false;
+
                 if (index === slides.length - 1) {
-                    slider.style.transition = "none";
                     index = 1;
-                    slider.style.transform = `translateX(-${index * width}px)`;
+                    setPosition(false);
                 } 
                 else if (index === 0) {
-                    slider.style.transition = "none";
                     index = slides.length - 2;
-                    slider.style.transform = `translateX(-${index * width}px)`;
+                    setPosition(false);
                 }
             }, { once: true });
         }
@@ -370,6 +346,11 @@
         function startTimer() {
             timer = setInterval(() => move(1), 3500);
         }
+
+        window.addEventListener('resize', () => {
+            setPosition(false);
+        });
+
         startTimer();
     </script>
     <script>
