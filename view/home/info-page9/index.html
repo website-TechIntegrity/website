@@ -152,27 +152,26 @@
             color: #3c4043; 
         }
 
-        /* SLIDER WITH CROP FIX */
-        .slider-container { 
-            position: relative; 
-            width: 550px; 
+        .slider-container {
+            position: relative;
+            width: 550px;
             height: 650px;
-            flex-shrink: 0; 
-            overflow: hidden; 
+            flex-shrink: 0;
+            overflow: hidden;
             border: 1px solid #dadce0;
+            margin: 0 auto;
         }
-        .slider-wrapper { 
-            display: flex; 
+        .slider-wrapper {
+            display: flex;
             height: 100%;
         }
-        .slider-wrapper img { 
-            width: 550px; 
-            height: 650px; 
-            flex-shrink: 0; 
-            object-fit: cover; 
+        .slider-wrapper img {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
-        
         .slider-nav { 
             position: absolute; 
             top: 0; 
