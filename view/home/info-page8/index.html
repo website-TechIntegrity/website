@@ -221,9 +221,25 @@
         .bottom-spacer { height: 15px; width: 100%; }
 
         @media (max-width: 950px) {
-            .content-row { flex-direction: column; align-items: center; }
-            .feature-col, .slider-container { width: 100%; max-width: 550px; }
-            .slider-wrapper img { width: 100%; height: auto; } /* mobilon a magasság automatikus */
+            .content-row { 
+                flex-direction: column; 
+                align-items: center; 
+            }
+
+            .feature-col, .slider-container { 
+                width: 100%; 
+                max-width: 550px; 
+            }
+
+            .slider-container { 
+                height: 400px;
+            }
+
+            .slider-wrapper img { 
+                width: 100%; 
+                height: 100%; 
+                object-fit: cover; 
+            }
         }
     </style>
 </head>
@@ -309,28 +325,32 @@
         let timer;
 
         function getSlideWidth() {
-            return slider.clientWidth;
+            return slider.parentElement.clientWidth;
         }
 
-        slider.style.transform = `translateX(-${getSlideWidth() * index}px)`;
+        function setPosition(animate = false) {
+            const slideWidth = getSlideWidth();
+            slider.style.transition = animate ? "transform 0.4s ease-in-out" : "none";
+            slider.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+
+        setPosition(false);
 
         function move(dir) {
             if (isTransitioning) return;
             isTransitioning = true;
             index += dir;
-            slider.style.transition = "transform 0.4s ease-in-out";
-            slider.style.transform = `translateX(-${getSlideWidth() * index}px)`;
+            setPosition(true);
 
             slider.addEventListener('transitionend', () => {
                 isTransitioning = false;
+
                 if (index === slides.length - 1) {
-                    slider.style.transition = "none";
                     index = 1;
-                    slider.style.transform = `translateX(-${getSlideWidth() * index}px)`;
+                    setPosition(false);
                 } else if (index === 0) {
-                    slider.style.transition = "none";
                     index = slides.length - 2;
-                    slider.style.transform = `translateX(-${getSlideWidth() * index}px)`;
+                    setPosition(false);
                 }
             }, { once: true });
         }
@@ -342,16 +362,15 @@
         }
 
         function startTimer() {
-            timer = setInterval(() => move(1), 4000);
+            timer = setInterval(() => move(1), 3500);
         }
-        startTimer();
 
         window.addEventListener('resize', () => {
-            slider.style.transition = "none";
-            slider.style.transform = `translateX(-${getSlideWidth() * index}px)`;
+            setPosition(false);
         });
-    </script>
 
+        startTimer();
+    </script>
     <script>
     (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="FoDHPpTfa82aYR65Mze05";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
     </script>
