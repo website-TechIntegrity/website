@@ -223,7 +223,7 @@
         @media (max-width: 950px) {
             .content-row { flex-direction: column; align-items: center; }
             .feature-col, .slider-container { width: 100%; max-width: 550px; }
-            .slider-wrapper img { width: 100%; height: 650px; }
+            .slider-wrapper img { width: 100%; height: auto; } /* mobilon a magasság automatikus */
         }
     </style>
 </head>
@@ -307,27 +307,30 @@
         let index = 1;
         let isTransitioning = false;
         let timer;
-        const slideWidth = 550;
 
-        slider.style.transform = `translateX(-${index * slideWidth}px)`;
+        function getSlideWidth() {
+            return slider.clientWidth;
+        }
+
+        slider.style.transform = `translateX(-${getSlideWidth() * index}px)`;
 
         function move(dir) {
             if (isTransitioning) return;
             isTransitioning = true;
             index += dir;
             slider.style.transition = "transform 0.4s ease-in-out";
-            slider.style.transform = `translateX(-${index * slideWidth}px)`;
+            slider.style.transform = `translateX(-${getSlideWidth() * index}px)`;
 
             slider.addEventListener('transitionend', () => {
                 isTransitioning = false;
                 if (index === slides.length - 1) {
                     slider.style.transition = "none";
                     index = 1;
-                    slider.style.transform = `translateX(-${index * slideWidth}px)`;
+                    slider.style.transform = `translateX(-${getSlideWidth() * index}px)`;
                 } else if (index === 0) {
                     slider.style.transition = "none";
                     index = slides.length - 2;
-                    slider.style.transform = `translateX(-${index * slideWidth}px)`;
+                    slider.style.transform = `translateX(-${getSlideWidth() * index}px)`;
                 }
             }, { once: true });
         }
@@ -342,6 +345,11 @@
             timer = setInterval(() => move(1), 4000);
         }
         startTimer();
+
+        window.addEventListener('resize', () => {
+            slider.style.transition = "none";
+            slider.style.transform = `translateX(-${getSlideWidth() * index}px)`;
+        });
     </script>
 
     <script>
