@@ -5,23 +5,20 @@ if ('scrollRestoration' in history) {
 
 document.addEventListener("click", (e) => {
     const link = e.target.closest("a");
-
-    if (link) {
-        const href = link.getAttribute("href");
-
-        if (href && (href.startsWith("..") || href.startsWith("/") || link.hostname === window.location.hostname) && href !== "#") {
-            
-            sessionStorage.setItem("pagingScrollPos", window.scrollY);
-            sessionStorage.setItem("isPaging", "true");
-        }
+    if (link && link.hostname === window.location.hostname) {
+        sessionStorage.setItem("pagingScrollPos", window.scrollY);
+        sessionStorage.setItem("isPaging", "true");
     }
 });
-window.addEventListener("DOMContentLoaded", () => {
+
+(function() {
     const isPaging = sessionStorage.getItem("isPaging");
     const savedPos = sessionStorage.getItem("pagingScrollPos");
 
     if (isPaging === "true" && savedPos !== null) {
         window.scrollTo(0, parseInt(savedPos));
-        sessionStorage.removeItem("isPaging");
+        requestAnimationFrame(() => {
+            window.scrollTo(0, parseInt(savedPos));
+        });
     }
-});
+})();
