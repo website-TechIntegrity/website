@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Információk (2. oldal)</title>
+    <title>Információk (3. oldal)</title>
     <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -128,7 +128,7 @@
             flex-direction: column;
             gap: 20px;
         }
-        .feature-img { width: 100%; height: auto; }
+        .feature-img { width: 100%; height: auto; border: 1px solid #eee; }
         
         .text-block { flex-grow: 1; }
         .text-block h2 { 
@@ -147,7 +147,6 @@
             color: #3c4043; 
         }
 
-        /* Slider Fixed Structure (Match Page 1) */
         .slider-container { 
             position: relative; 
             width: 550px; 
@@ -159,7 +158,6 @@
         .slider-wrapper { 
             display: flex; 
             height: 100%;
-            /* Do not add transition here, JS handles it */
         }
         .slider-wrapper img { 
             width: 550px; 
@@ -218,136 +216,11 @@
         }
         .bottom-spacer { height: 15px; width: 100%; }
 
-        .footer-illustration {
-            width: 100%;
-            line-height: 0;
-            background-color: #ffffff;
-        }
-
-        .footer-illustration img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .footer-container {
-            background-color: #34A9DE;
-            padding: 60px 10%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .footer-row {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-        }
-
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .footer-label {
-            color: #055991;
-            font-weight: 700;
-            font-size: 16px;
-            margin: 5px 0;
-        }
-
-        .footer-white-text {
-            color: #ffffff;
-            margin: 0;
-            font-size: 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .email-icon {
-            width: 35px;
-            height: auto;
-            margin-bottom: 5px;
-        }
-
-        .footer-inner-divider {
-            width: 100%;
-            max-width: 1550px;
-            height: 1px;
-            background-color: rgba(255, 255, 255, 0.2);
-            margin: 40px 0;
-        }
-
-        .social-icons-container {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: auto;
-            transition: transform 0.2s ease-in-out, opacity 0.2s;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.15);
-            opacity: 0.9;
-        }
-
-        .social-icon:active {
-            transform: scale(0.95);
-        }
-
-        .footer-tape {
-            background-color: #055991;
-            padding: 35px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 80px;
-            width: 100%;
-        }
-
-        .tape-icon {
-            height: 140px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .footer-copyright {
-            background-color: #34A9DE;
-            padding: 50px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-
-        .copyright-link {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #ffffff;
-            gap: 12px;
-            transition: opacity 0.2s;
-        }
-
-        .copyright-link:hover {
-            opacity: 0.8;
-        }
-
-        .copyright-logo {
-            height: 30px;
-            width: auto;
-        }
-
-        @media (max-width: 768px) {
-            .footer-container { padding: 40px 5%; }
-            .tape-icon { height: 80px; }
-            .footer-tape { gap: 40px; }
+        @media (max-width: 950px) {
+            .content-row { flex-direction: column; align-items: center; }
+            .feature-col, .slider-container { width: 100%; max-width: 550px; }
+            .slider-container { height: auto; aspect-ratio: 550 / 650; }
+            .slider-wrapper img { width: 100%; height: 100%; }
         }
     </style>
 </head>
@@ -367,26 +240,24 @@
             <div></div>
             <div class="nav-center"><a href="../" class="vissza-btn">Vissza</a></div>
             <div class="nav-right">
-                <span class="page-text">2/11</span>
+                <span class="page-text">3/11</span>
                 <a href="../info-page1" class="arrow-btn">↞</a>
-                <a href="../info-page1" class="arrow-btn">←</a>
-                <a href="../info-page3" class="arrow-btn">→</a>
+                <a href="../info-page2" class="arrow-btn">←</a>
+                <a href="../info-page4" class="arrow-btn">→</a>
                 <a href="../info-page11" class="arrow-btn">↠</a>
             </div>
         </div>
 
         <div class="content-row">
             <div class="feature-col">
-                <img src="https://database.techintegrity.hu/images/website/stockholm.png" alt="Stockholm" class="feature-img">
-                <img src="https://database.techintegrity.hu/images/website/harom-pont_logo.png" alt="Három Pont Logo" class="feature-img">
+                <img src="https://database.techintegrity.hu/images/website/paris1_crop.png" alt="Paris Crop" class="feature-img">
+                <img src="https://database.techintegrity.hu/images/website/harom-pont_logo.png" alt="Három Pont Logo" class="feature-img" style="border: 0;">
             </div>
             <div class="text-block">
-                <h2>Horváth Kevin — "Újév előtt harcolunk minden pontért – vagy három, vagy nem!"</h2>
-                <p><b>Horváth Kevin jelenléte Stockholmban brutálisan meggazdagította a különböző országokból beszállított áruk kezelési folyamatát, mely egyre jobban segített abban, hogy a "Három Pont" megvalósításához egyre közelebb juthasson a TechIntegrity Solutions.</b><br><br>
-                Irodai ügyvivő és belpolitikai ügyészként Horváth Kevin elismerte, hogy az ország- és világjárások nélkül valóban nem érte volna el a cég a 35%-os növekedést az elmúlt hónapban, főleg pont a tárgyalás után és az újév előtt.<br><br>
-                Ahogy fogalmazott Horváth Kevin cégvezető:<br>
-                <i>"Nem tudom, de nem is értem, hogyan kezdhettem Berlinben informatikai cég nélkül, majd politizálva érkezve Stockholmba azonnal, Berlini munkámból származó magyar mellékvállalkozókkal. Mintha tegnap lett volna."</i><br><br>
-                Maga ismerte be, hogy nem volt ilyen könnyű a legelején, de mégis gyorsan telt az idő, és ilyen fürgén harcolt tovább a cégje. A 35% csak becslés, de nem túlzás - inkább annak a jele, hogy <b>egyre közelebb vagyunk a "Három Pont" megvalósításához.</b> <a href="https://www.horvathkevin.hu" style="color: #1a73e8; text-decoration: none;">Horváth Kevin weboldala</a></p>
+                <h2>Horváth Kevin, December 31. — "Újabb nap, újabb év. A politikai érdekeket már nagyban megosztom, hiszen egyre jobban növekszünk."</h2>
+                <p><b>Horváth Kevin már Párizsban is erőteljesen dolgozik azon, hogy a politikai érdekei elfogadása után már a cégnek ne kelljen szenvednie a külügyi- és belügyi információk rászorulásával, és még több európai országokból szállítják be a gépalkatrészeket, melyeken már most is dolgozunk. Minden lépés után egyre közelebb van a "Három Pont" megvalósításához a TechIntegrity Solutions.</b></br></br>
+                Fogalmazott Horváth Kevin cégvezető:<br></br>
+                <i>"Mint egy helyileg, köztudatban elismert Zrt. cég, nekünk az a feladatunk hogy a legjobbat hozzuk ki a cégből nem csak a jövőbeli "Három Pont" megvalósítása közben a fogyasztóknak, hanem az egyéb politikával érdeklő és cégvállalkozó személyeknek. A TechIntegrity Solutions Zrt. semmiféleképpen nem fog megnevezni politikai párthoz kötődést, de a hivatalos dokumentumokban az adott vezetőségi üléseken meg lesz adva minden fontos információ a cég működését és jövőbeli terveit illetve. A "Három Pont" megvalósítása után várható, hogy a politikai érdekünk közel mint nullára csökken, mely után remélhetőleg közismertebbek leszünk mint egy valódi, fogyasztóknak kedvezményező és megfelelő mennyiségű profitot nyerő informatikai cég."</i><br></br><a href="https://www.horvathkevin.hu" style="color: #1a73e8; text-decoration: none;">Horváth Kevin weboldala</a></p>
             </div>
         </div>
 
@@ -394,20 +265,21 @@
 
         <div class="content-row">
             <div class="text-block" style="text-align: center;">
-                <h2 style="font-size: 30px;">December 30. Legújabb információink mai napon</h2>
-                <p style="text-align: center; font-size: 21px;">2026-ra készülünk, és a legjobb belügyi tervek szerint valószínűleg Január 1-jén fog indulni a következő tárgyalás, mely közbelépése folytán várható egy újabb vezetőségi ülést fogalmazó dokumentum.<br><br>
-                A "Három Pont" tervet meg akartuk valósítani, akarjuk is, és meg is fogjuk! Nem állít meg semmi sem bennünket!<br><br>
-                Együtt harcolunk minden pontért – vagy három, vagy nem!</p>
+                <h2 style="font-size: 30px;">December 31. –
+Legújabb információink mai napon</h2>
+                <p style="text-align: center; font-size: 21px;">Január 1-jén, most már fix napként, indul a következő tárgyalás, egy következő dokumentummal.<br><br>
+                Köszönöm szépen minden támogatótól, vállalkozótól és egyéb politikával foglalkozóktól, hogy idáig juthattunk!<br><br>
+		A "Három Pont" megvalósítását már nem hogy Stockholmból vagy Berlinből, hanem Párizsból is látjuk.</p>
             </div>
             <div class="slider-container">
                 <div class="slider-wrapper" id="slider">
-                    <img src="https://database.techintegrity.hu/documents/M1-Page2.png" alt="Buffer Last">
+                    <img src="https://database.techintegrity.hu/images/website/paris1.png" alt="Buffer Last">
                     
-                    <img src="https://database.techintegrity.hu/images/website/harom-pont_logo.png" alt="Slide 1">
-                    <img src="https://database.techintegrity.hu/documents/M1-Page1.png" alt="Slide 2">
-                    <img src="https://database.techintegrity.hu/documents/M1-Page2.png" alt="Slide 3">
+                    <img src="https://database.techintegrity.hu/images/website/paris2.png" alt="Paris 2">
+                    <img src="https://database.techintegrity.hu/images/website/harom-pont_logo.png" alt="Három Pont Logo">
+                    <img src="https://database.techintegrity.hu/images/website/paris1.png" alt="Paris 1 Full">
                     
-                    <img src="https://database.techintegrity.hu/images/website/harom-pont_logo.png" alt="Buffer First">
+                    <img src="https://database.techintegrity.hu/images/website/paris2.png" alt="Buffer First">
                 </div>
                 <div class="slider-nav">
                     <button onclick="manualBtn(-1)">❮</button>
@@ -430,53 +302,7 @@
         <div class="section-divider"></div>
         <div class="bottom-spacer"></div>
     </main>
-    <footer>
-        <div class="footer-illustration">
-            <img src="https://database.techintegrity.hu/images/assets/website-footer.png" alt="">
-        </div>
 
-        <div class="footer-container">
-            <div class="footer-row">
-                <div class="footer-column">
-                    <img src="https://database.techintegrity.hu/images/assets/mail-icon.png" alt="" class="email-icon">
-                    <span class="footer-label">Email címünk:</span>
-                    <span class="footer-white-text">Business@TechIntegrity.hu</span>
-                </div>
-
-                <div class="footer-column">
-                    <div class="social-icons-container">
-                        <a href="https://www.facebook.com/techintegrity.kaposvar" target="_blank">
-                            <img src="https://database.techintegrity.hu/images/assets/social-media/facebook.png" alt="Facebook" class="social-icon">
-                        </a>
-                        <a href="https://www.linkedin.com/in/horvathkevinofficial" target="_blank">
-                            <img src="https://database.techintegrity.hu/images/assets/social-media/linkedin.png" alt="LinkedIn" class="social-icon">
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-inner-divider"></div>
-
-            <div class="footer-column">
-                <span class="footer-label">Cégünk</span>
-                <a href="http://kapcsolat.techintegrity.hu" target="_blank" class="footer-white-text" style="margin-bottom: 8px;">Kapcsolat</a>
-                <a href="http://info.techintegrity.hu" target="_blank" class="footer-white-text" style="margin-bottom: 8px;">Rólunk</a>
-                <a href="https://www.google.com/maps/place/TechIntegrity+K%C3%B6zpont+-+Kaposv%C3%A1r/@46.3576225,17.7860129,430m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47681541892029a1:0x2ccbdaac16752afa!8m2!3d46.3576225!4d17.7860129!16s%2Fg%2F11" target="_blank" class="footer-white-text">Üzletünk</a>
-            </div>
-        </div>
-
-        <div class="footer-tape">
-            <img src="https://database.techintegrity.hu/images/assets/magyar-vallalat-logo.png" alt="Magyar Vállalat" class="tape-icon">
-            <img src="https://database.techintegrity.hu/images/website/thfa.png" alt="THFA" class="tape-icon">
-        </div>
-
-        <div class="footer-copyright">
-            <a href="https://www.techintegrity.hu" target="_self" class="copyright-link">
-                <img src="https://database.techintegrity.hu/images/website/techintegrity_logo.png" alt="" class="copyright-logo">
-                <span>© 2026 TechIntegrity Solutions Zrt. Magyarország</span>
-            </a>
-        </div>
-    </footer>
 <script>
     const slider = document.getElementById('slider');
     const slides = slider.getElementsByTagName('img');
