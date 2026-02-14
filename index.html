@@ -3,14 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechIntegrity - Belépés</title>
-    
+    <title>TechIntegrity - Honlapunk</title>
+    <link rel="canonical" href="https://www.techintegrity.hu/">
     <script>
         if (localStorage.getItem('techintegrity_access') === 'true') {
             window.location.href = '/view/home';
         }
     </script>
-
+    <script type="application/ld+json">
+    [
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TechIntegrity",
+        "legalName": "TechIntegrity Solutions Zrt. Magyarország",
+        "url": "https://www.techintegrity.hu/",
+        "logo": "https://database.techintegrity.hu/images/website/techintegrity_logo.png",
+        "description": "TechIntegrity Solutions Zrt. - Megvalósított Három Pont terv, informatikaipari gazdaságnövekedés céljával."
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "TechIntegrity Navigáció",
+        "itemListElement": [
+        {
+            "@type": "SiteNavigationElement",
+            "position": 1,
+            "name": "Főoldal",
+            "url": "https://www.techintegrity.hu/"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 2,
+            "name": "Információk",
+            "url": "https://www.techintegrity.hu/view/home/info-page1"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 3,
+            "name": "Közzétett információk",
+            "url": "https://www.techintegrity.hu/view/home/posts"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 4,
+            "name": "Üzletünk",
+            "url": "https://www.techintegrity.hu/view/home/store"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 5,
+            "name": "Jogiratok",
+            "url": "https://www.techintegrity.hu/view/home/papers"
+        },
+        {
+            "@type": "SiteNavigationElement",
+            "position": 6,
+            "name": "Kapcsolat",
+            "url": "https://www.techintegrity.hu/view/home/contact"
+        }
+        ]
+    }
+    ]
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -99,6 +154,5 @@
             window.location.href = 'view/home';
         }
     </script>
-
 </body>
 </html>
