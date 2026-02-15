@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <link rel="icon" type="image/png" href="https://database.techintegrity.hu/logos/tis-icon_black.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiba 404</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .bg {
+            background-image: url("https://database.techintegrity.hu/images/main-background.png");
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            filter: brightness(0.6);
+        }
+
+        .container {
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        h3{
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .main-button {
+            display: inline-block;
+            padding: 20px 50px;
+            font-size: 1.5rem;
+            color: white;
+            background-color: #0077ff;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .main-button:hover {
+            background-color: #0066ff;
+            transform: scale(1.05);
+        }
+
+        #fallback-text {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        #fallback-text a {
+            color: #60a5fa;
+        }
+        .copy-email {
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: underline;
+            position: relative;
+        }
+
+        .copy-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .close-notify {
+            cursor: pointer;
+            font-weight: bold;
+            color: #5c5c5c;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; bottom: 10px; }
+            to { opacity: 1; bottom: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="container">
+        <h1>Hiba: 404</h1>
+        <h2>Az oldal nem található.<br>Valószínűleg a link hibás, vagy az oldal törölve lett.</h2>
+        <button class="main-button" onclick="startRedirect()">Vissza a TechIntegrity honlap főoldalára</button>
+        <div id="fallback-text">
+            <p>Átirányítás a főoldalra... <a href="https://www.techintegrity.hu">Kattints ide</a> ha nem történt semmi.</p>
+        </div>
+        <h3>Hibáztunk, és ennek az oldalnak léteznie kéne?<br>
+        Jelezd nekünk itt: <span class="copy-email" onclick="copyToClipboard(this)">Business@TechIntegrity.hu</span>.</h3>
+    </div>
+    <script>
+        function startRedirect() {
+            document.getElementById('fallback-text').style.display = 'block';
+            window.location.href = "https://www.techintegrity.hu";
+        }
+        function copyToClipboard(element) {
+        const email = element.innerText;
+
+        navigator.clipboard.writeText(email).then(() => {
+            const oldNotify = document.querySelector('.copy-notification');
+            if (oldNotify) oldNotify.remove();
+
+            const notification = document.createElement('div');
+            notification.className = 'copy-notification';
+            notification.innerHTML = `
+                Emailünk sikeresen másolva! 
+                <span class="close-notify" onclick="this.parentElement.remove()">X</span>
+            `;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 3000);
+        });
+    }
+    </script>
+</body>
+</html>
