@@ -387,10 +387,89 @@
             .tape-icon { height: 80px; }
             .footer-tape { gap: 40px; }
         }
+        /* Main menu styling */
+        .site-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://database.techintegrity.hu/images/assets/website-header.png'); 
+            background-size: cover;
+            background-position: left center; 
+            background-repeat: no-repeat;
+
+            padding: 20px 0;
+            border-bottom: 2px solid #34A9DE;
+        }
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            padding: 0 15px;
+        }
+        .top-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .top-nav a:hover {
+            color: #34A9DE;
+        }
+        .top-nav .portal-link {
+            border: 1px solid #34A9DE;
+            padding: 8px 18px;
+            border-radius: 4px;
+            background-color: rgba(52, 169, 222, 0.1);
+        }
+
+        .top-nav .portal-link:hover {
+            background-color: #34A9DE;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 10px 0;
+            }
+
+            .top-nav {
+                gap: 8px;
+                padding: 0 10px;
+            }
+
+            .top-nav a {
+                font-size: 13px;
+                font-weight: 600;
+                padding: 12px 8px;
+                display: inline-block;
+            }
+
+            .top-nav .portal-link {
+                padding: 10px 20px;
+                margin-top: 5px;
+                border-width: 2px;
+            }
+        }
     </style>
 </head>
 <body>
-
+    <header class="site-header">
+        <nav class="top-nav">
+            <a href="../info-page1/">Hírek</a>
+            <a href="../posts/">Közzétételek</a>
+            <a href="../store/">Üzletünk</a>
+            <a href="../papers/">Jogiratok</a>
+            <a href="../contact/">Kapcsolat</a>
+            <a href="https://portal.techintegrity.hu" class="portal-link">Bejelentkezés</a>
+        </nav>
+    </header>
     <div class="hero-section">
         <img src="https://database.techintegrity.hu/images/main-banner.png" alt="Banner">
         <div class="scroll-down-arrow" onclick="document.getElementById('info-start').scrollIntoView({behavior: 'smooth'});">
