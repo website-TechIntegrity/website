@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Információk (5. oldal)</title>
+    <title>Információk (12. oldal)</title>
     <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +37,7 @@
             margin: 0; 
             padding: 0; 
             background-color: #ffffff; 
-            color: #3c4043; 
+            color: #000000; 
             font-family: 'Inter', sans-serif; 
             font-size: 18px; 
             line-height: 1.6;
@@ -60,6 +60,7 @@
             height: auto; 
             object-fit: contain; 
         }
+
         .scroll-down-arrow { 
             position: absolute; 
             bottom: 40px; 
@@ -77,7 +78,7 @@
 
         .main-content { 
             width: 100%; 
-            max-width: 1100px; 
+            max-width: 1000px; 
             margin: 0 auto; 
             padding: 0 20px; 
         }
@@ -134,109 +135,46 @@
             font-size: 16px; 
         }
 
-        .content-row { 
-            display: flex; 
-            gap: 40px; 
-            margin: 30px 0; 
-            align-items: flex-start; 
-        }
-        
-        .feature-col { 
-            width: 380px; 
-            flex-shrink: 0; 
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .feature-img { width: 100%; height: auto; border: 1px solid #eee; }
+        .announcement-header { text-align: center; margin-bottom: 30px; }
+        .announcement-header h1 { font-size: 42px; margin: 0; color: #000; }
+        .announcement-header h2 { font-size: 39px; margin: 0px 0; color: #000; text-decoration: underline; }
 
-        /* Sidebar Slider Fixed */
-        .side-slider-container {
-            position: relative;
-            width: 380px;
-            height: 480px;
-            overflow: hidden;
-            border: 1px solid #dadce0;
-        }
-        
-        .text-block { flex-grow: 1; }
-        .text-block h2 { 
-            margin: 0 0 15px 0; 
-            font-size: 34px; 
-            font-weight: bold; 
-            color: #000; 
-            text-align: center; 
-            line-height: 1.2;
-        }
-        .text-block p { 
-            margin: 0; 
+        .prose-text { 
             font-size: 20px; 
-            line-height: 1.5; 
-            text-align: left; 
-            color: #3c4043; 
+            text-align: justify; 
+            color: #202124; 
+            margin-bottom: 40px; 
         }
+        .prose-text b { color: #000; }
 
-        /* Main Slider */
-        .slider-container { 
-            position: relative; 
-            width: 550px; 
-            height: 650px;
-            flex-shrink: 0; 
-            overflow: hidden; 
-            border: 1px solid #dadce0;
+        .doc-section { text-align: center; margin: 50px 0; }
+        .doc-container {
+            width: 100%;
+            max-width: 1000px;
+            height: 1000px;
+            margin: 0 auto 20px auto;
+            overflow: hidden;
         }
-        .slider-wrapper { 
-            display: flex; 
-            height: 100%;
-        }
-        .slider-wrapper img { 
-            width: 100%; 
-            height: 100%; 
-            flex-shrink: 0; 
-            object-fit: contain; 
-            display: block;
-        }
-        
-        .slider-nav { 
-            position: absolute; 
-            top: 0; 
-            bottom: 0; 
-            left: 0; 
-            right: 0; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 0 10px; 
-            pointer-events: none; 
-            z-index: 5;
-        }
-        .slider-nav button { 
-            pointer-events: auto; 
-            background: rgba(255, 255, 255, 0.9); 
-            border: none; 
-            width: 44px; 
-            height: 44px; 
-            cursor: pointer; 
-            border-radius: 50%; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 20px;
-        }
-        .slider-container:hover .slider-nav button,
-        .side-slider-container:hover .slider-nav button { opacity: 1; }
+        .doc-container a { display: block; width: 100%; height: 100%; }
+        .doc-container img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-        .table-section { text-align: center; margin: 40px 0; }
-        .table-img { 
-            width: 100%; 
-            max-width: 650px; 
-            height: auto; 
-            margin: 0 auto 15px auto; 
-            border: 1px solid #dadce0; 
+        .redirect-link { 
             display: block;
+            margin: 20px auto;
+            max-width: 600px;
+            font-size: 16px; 
+            color: #1a73e8; 
+            text-decoration: none; 
+            line-height: 1.4;
+        }
+        .redirect-link:hover { text-decoration: underline; }
+
+        .copyright-block {
+            text-align: center;
+            font-size: 14px;
+            color: #70757a;
+            margin: 40px 0;
+            line-height: 1.8;
         }
 
         .footer-nav { 
@@ -245,7 +183,6 @@
             color: #5f6368; 
             font-size: 16px;
         }
-        .bottom-spacer { height: 15px; width: 100%; }
         .footer-illustration {
             width: 100%;
             line-height: 0;
@@ -371,17 +308,30 @@
             height: 30px;
             width: auto;
         }
-        @media (max-width: 950px) {
-            .content-row { flex-direction: column; align-items: center; }
-            .feature-col, .slider-container, .side-slider-container { 
-                width: 100%; 
-                max-width: 550px; 
-            }
-            .slider-container { height: auto; aspect-ratio: 550 / 650; }
-            .side-slider-container { height: auto; aspect-ratio: 380 / 480; }
-            
-            .slider-wrapper img { width: 100%; height: 100%; }
+
+        .img-section { 
+            text-align: center; 
+            margin: 40px auto; 
+            max-width: 400px;
         }
+        .img-img { 
+            width: 100%; 
+            max-width: 100%;
+            height: auto; 
+            margin: 0 auto 10px auto; 
+            border: 1px solid #dadce0; 
+            border-radius: 8px;
+            display: block;
+            object-fit: cover;
+        }
+        .img-caption {
+            font-size: 20px;
+            color: #3c4043; 
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+	    .bottom-spacer { height: 15px; width: 100%; }
         @media (max-width: 768px) {
             .footer-container { padding: 40px 5%; }
             .tape-icon { height: 80px; }
@@ -473,83 +423,57 @@
     <div class="hero-section">
         <img src="https://database.techintegrity.hu/images/main-banner.png" alt="Banner">
         <div class="scroll-down-arrow" onclick="document.getElementById('info-start').scrollIntoView({behavior: 'smooth'});">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#34A9DF" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#34A9DF" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
         </div>
     </div>
 
     <main class="main-content" id="info-start">
-        <div class="section-divider"></div>
+        <div class="section-divider" style="margin-top: 0;"></div>
 
         <div class="nav-bar">
             <div></div>
             <div class="nav-center"><a href="../" class="vissza-btn">Vissza</a></div>
             <div class="nav-right">
-                <span class="page-text">5/12</span>
+                <span class="page-text">12/12</span>
                 <a href="../info-page1/" class="arrow-btn">↞</a>
-                <a href="../info-page4/" class="arrow-btn">←</a>
-                <a href="../info-page6/" class="arrow-btn">→</a>
-                <a href="../info-page12/" class="arrow-btn">↠</a>
+                <a href="../info-page11/" class="arrow-btn">←</a>
+                <span class="arrow-btn" style="opacity: 0.3; cursor: default;">→</span>
+                <span class="arrow-btn" style="opacity: 0.3; cursor: default;">↠</span>
             </div>
         </div>
 
-        <div class="content-row">
-            <div class="feature-col">
-                <img src="https://database.techintegrity.hu/images/website/rome_crop.png" alt="Rome" class="feature-img">
-                
-                <div class="side-slider-container">
-                    <div class="slider-wrapper" id="side-slider">
-                        <img src="https://database.techintegrity.hu/documents/M2-Page3.png" alt="Buffer Last">
-                        <img src="https://database.techintegrity.hu/documents/M2-Page1.png" alt="M2 P1">
-                        <img src="https://database.techintegrity.hu/documents/M2-Page2.png" alt="M2 P2">
-                        <img src="https://database.techintegrity.hu/documents/M2-Page3.png" alt="M2 P3">
-                        <img src="https://database.techintegrity.hu/documents/M2-Page1.png" alt="Buffer First">
-                    </div>
-                    <div class="slider-nav">
-                        <button onclick="sideManualBtn(-1)">❮</button>
-                        <button onclick="sideManualBtn(1)">❯</button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-block">
-                <h2>Horváth Kevin, Január 1.<br>Boldog új évet kívánunk mindenkinek!</h2>
-                <p><b>Horváth Kevin Római politizálása és világjárása után a TechIntegrity Solutions dolgozik a "Három Pont" megvalósításán. A mai Január 1-jei tárgyalás volt az eddigi legnagyobb, többszázas tömeggel nagyon nehéz volt fenntartani az épületet.</b><br><br>
-                A mai döntőponton Horváth Kevin cégvezető ismét fogalmazott:<br><br>
-                <i>"Tudtam, hogy nem így lesz a legkönnyebb, de sikerült megcsinálni, amit eddig akart a cég a "Három Pont" tervéig. Kezdeni Berlinben egy darab zászlóval, majd ilyen sikeresen eljutni az új cégem legnagyobb tárgyalásáig. A 220 fős tömeg jelenléte kiabálta, hogy az előző 30 semmi volt."</i><br><br>
-                Beismerte, hogy <b>a "Három Pont" közelebb van a megvalósításához, mint valaha</b>. Tudta, hogy nem hagyhatja így a céget. A cég akaratai szerint egy konzultáción pedig létre lesz hozva a "Három Pont Szerződés", amely még nagyobb lesz a három darab pont érven belüli teljeskörű igazolásával és fontosnak tartásával, viszont ez még nem igazolt Horváth Kevin mesterinformatikus aláírásával.<br><br><a href="https://www.horvathkevin.hu" style="color: #1a73e8; text-decoration: none;">Horváth Kevin weboldala</a></p>
-            </div>
+        <div class="announcement-header">
+            <h1>2026. március 15.</h1>
+            <h2>Üzleti beszámoló a januári és februári időszakról</h2>
+        </div>
+
+        <div class="prose-text">
+            <p style="text-align: center;"><b>A TechIntegrity Solutions Zrt. Hungary március 15-én, pont a nemzeti ünnep napján jelentette be a januári és februári napokat illető gazdasági növekedések eredményeit. Az ezekről szóló és ezeket ledokumentáló hivatalos dokumentumokat a TPK publikálásán keresztül a TVD megbízásából elérhetővé tettük.<br>(A publikáció teljesen független bármilyen tárgyalástól, amely várhatóan következni fog.)<br><br>Rövid összefoglalóban azt lehet mondani, hogy a cégen belüli 121%-os gazdasági növekedés az elmúlt két hónapban, illetve a decemberi 35%-os emelkedés (létszámot és gazdaságot illetve egyaránt) mind ráadtak a cég sikerének esélyére. Ahogy Horváth Kevin cégvezető fogalmazott:</b><br><br><i>"Már viszont azt is látjuk, hogy a cég nemzetközi elismerést kapott a januári és februári időszakban elért eredményeiért. A külügy nálunk nem csak "zártügyekről" vagy "nyíltügyekről" szól - hanem már a valódi módon végrehajtott kereskedelemről és gazdasági tevékenységekről is."</i></p>
+            <p style="text-align: center;"><a href="https://www.horvathkevin.hu" target="_blank" style="color: #1a73e8; text-decoration: none;">Többet Horváth Kevin cégvezetőről</a></p>
         </div>
 
         <div class="section-divider"></div>
 
-        <div class="content-row">
-            <div class="text-block" style="text-align: center;">
-                <h2 style="font-size: 30px;">Január 1.<br>Mai tárgyalás</h2>
-                <p style="text-align: center; font-size: 21px;">Az igért 14:30-i dokumentum a jobb oldalon látható!<br><br>
-		Köszönjük szépen minden támogatótól, vállalkozótól és egyéb politikával foglalkozóktól, hogy idáig juthattunk!<br><br>
-		A "Három Pont" megvalósítását már nem hogy Párizsból, Stockholmból vagy akár Budapestről, hanem már Rómából is látjuk.</p>
+        <div class="doc-section">
+            <div class="doc-container">
+                <a href="https://www.techintegrity.hu/view/home/papers#h.jmhuhv3qgzy:~:text=Q1%20növekedési%20beszámoló%202026.%20március%201-jén" target="_blank">
+                    <img src="https://database.techintegrity.hu/documents/P3-Page4.png" alt="Hivatalos Dokumentum">
+                </a>
             </div>
-            <div class="slider-container">
-                <div class="slider-wrapper" id="main-slider">
-                    <img src="https://database.techintegrity.hu/documents/M2-Page3.png" alt="Buffer Last">
-                    <img src="https://database.techintegrity.hu/documents/M2-Page1.png" alt="M2 P1">
-                    <img src="https://database.techintegrity.hu/documents/M2-Page2.png" alt="M2 P2">
-                    <img src="https://database.techintegrity.hu/documents/M2-Page3.png" alt="M2 P3">
-                    <img src="https://database.techintegrity.hu/documents/M2-Page1.png" alt="Buffer First">
-                </div>
-                <div class="slider-nav">
-                    <button onclick="mainManualBtn(-1)">❮</button>
-                    <button onclick="mainManualBtn(1)">❯</button>
-                </div>
-            </div>
+            
+            <a href="https://www.techintegrity.hu/view/home/papers#h.jmhuhv3qgzy:~:text=Q1%20növekedési%20beszámoló%202026.%20március%201-jén" target="_blank" class="redirect-link">
+                A március 15-ei hivatalos dokumentum mindnégy oldalának a megtekintéséhez kattints erre a képre, vagy erre a szövegre
+            </a>
         </div>
 
         <div class="section-divider"></div>
 
-        <div class="table-section">
-            <img src="https://database.techintegrity.hu/images/website/table.png" alt="Table" class="table-img">
-            <p style="font-size: 20px; color: #3c4043; font-weight: 500;">Véglegesített táblázat a TechIntegrity Solutions cégnél.</p>
+        <div class="img-section">
+            <img src="https://database.techintegrity.hu/images/website/hk-uzlet_crop.png" alt="Horváth Kevin" class="img-img">
+            <p class="img-caption">Horváth Kevin az üzletnél március 13-án, készülve a privát tárgyalásra Kaposváron</p>
         </div>
-
         <div class="section-divider"></div>
         <div class="footer-nav">
             Gyorsabban akarsz lapozni? <a href="../pages/" style="color: #1a73e8; text-decoration: none;">Oldalszámok megtekintése</a>
@@ -610,71 +534,6 @@
             </a>
         </div>
     </footer>
-    <script>
-        function createSlider(wrapperId) {
-            const wrapper = document.getElementById(wrapperId);
-            const slides = wrapper.getElementsByTagName('img');
-            let index = 1;
-            let isTransitioning = false;
-            let timer;
-
-            const getWidth = () => wrapper.parentElement.offsetWidth;
-
-            wrapper.style.transform = `translateX(-${index * getWidth()}px)`;
-
-            function move(dir) {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                
-                const currentWidth = getWidth();
-                index += dir;
-                
-                wrapper.style.transition = "transform 0.4s ease-in-out";
-                wrapper.style.transform = `translateX(-${index * currentWidth}px)`;
-
-                wrapper.addEventListener('transitionend', () => {
-                    isTransitioning = false;
-                    const freshWidth = getWidth();
-                    
-                    if (index === slides.length - 1) {
-                        wrapper.style.transition = "none";
-                        index = 1;
-                        wrapper.style.transform = `translateX(-${index * freshWidth}px)`;
-                    } else if (index === 0) {
-                        wrapper.style.transition = "none";
-                        index = slides.length - 2;
-                        wrapper.style.transform = `translateX(-${index * freshWidth}px)`;
-                    }
-                }, { once: true });
-            }
-
-            window.addEventListener('resize', () => {
-                wrapper.style.transition = "none";
-                wrapper.style.transform = `translateX(-${index * getWidth()}px)`;
-            });
-
-            function startTimer() {
-                timer = setInterval(() => move(1), 4000);
-            }
-
-            startTimer();
-
-            return {
-                manual: (dir) => {
-                    clearInterval(timer);
-                    move(dir);
-                    startTimer();
-                }
-            };
-        }
-
-        const mainSlider = createSlider('main-slider');
-        const sideSlider = createSlider('side-slider');
-
-        function mainManualBtn(dir) { mainSlider.manual(dir); }
-        function sideManualBtn(dir) { sideSlider.manual(dir); }
-    </script>
-
     <script>
     (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="FoDHPpTfa82aYR65Mze05";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
     </script>
