@@ -6,7 +6,7 @@
     <title>TechIntegrity - Honlapunk</title>
     <link rel="canonical" href="https://www.techintegrity.hu/">
     <!-- EMBED SYSTEM -->
-    <meta name="description" content="TechIntegrity Solutions Zrt. | Itt olvashatsz a hivatalos honlapunkon a cégünk gazdasági és kereskedelmi növekedéseiről, melyeket a már megvalósított Három Pont tervünk tett és tesz lehetővé.">">
+    <meta name="description" content="TechIntegrity Solutions Zrt. | Itt olvashatsz a hivatalos honlapunkon a cégünk gazdasági és kereskedelmi növekedéseiről, melyeket a már megvalósított Három Pont tervünk tett és tesz lehetővé.">
     <meta name="theme-color" content="#00a2e8">
     <meta property="og:url" content="https://www.techintegrity.hu/">
     <meta property="og:type" content="website">
@@ -25,6 +25,7 @@
             window.location.href = '/view/home';
         }
     </script>
+
     <script type="application/ld+json">
     [
     {
@@ -151,18 +152,13 @@
     </style>
 </head>
 <body>
-
     <div class="warning-card">
-        <h1>VIGYÁZZ!</h1>
+        <img src="https://database.techintegrity.hu/images/assets/warning-vigyazz.png" alt="Figyelmeztetés" style="max-width: 100%; height: auto;">
+        <picture><img src="https://database.techintegrity.hu/images/assets/warning-text.png" alt="Figyelmeztetés" style="max-width: 100%; height: auto;"><source srcset="https://database.techintegrity.hu/images/assets/warning-text-mobile.png" alt="Figyelmeztetés" style="max-width: 100%; height: auto;" media="(max-width: 500px)"></picture>
         <div class="divider"></div>
-        <p>A weboldal megtekintése a legtöbb látogató számára nem ajánlott, mivel cégvállalkozóknak és politikával foglalkozóknak készült.</p>
-        <p>Amennyiben ennek ellenére mégis hozzájárulsz a honlap megtekintéséhez, megnyomhatod az alábbi gombot.</p>
-        
-        <div class="btn-container">
-            <button onclick="grantAccess()" class="btn-access">IGEN, HOZZÁJÁRULOK</button>
-        </div>
+        <div class="btn-container"><button onclick="grantAccess()" class="btn-access">IGEN, HOZZÁJÁRULOK</button></div>
+        <div style="margin-top: 50px; font-size: 0.85rem; color: #555555; text-align: left;">© 2026 TechIntegrity Solutions Zrt.</div>
     </div>
-
     <script>
         function grantAccess() {
             localStorage.setItem('techintegrity_access', 'true');
