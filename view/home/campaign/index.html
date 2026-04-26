@@ -552,5 +552,12 @@
             </a>
         </div>
     </footer>
+    <script>
+        fetch('https://database.techintegrity.hu/static/html/footer.html')
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
 </body>
 </html>

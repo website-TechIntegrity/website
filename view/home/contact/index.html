@@ -575,6 +575,13 @@
     </footer>
     <div id="toast">Sikeresen másolva!</div>
     <script>
+        fetch('https://database.techintegrity.hu/static/html/footer.html')
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+    <script>
         function copyString(text) {
             const temp = document.createElement("input");
             temp.value = text;
