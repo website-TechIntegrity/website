@@ -220,17 +220,7 @@
     </style>
 </head>
 <body>
-    <header class="site-header">
-        <nav class="top-nav">
-            <a href="../info-page1/">Hírek</a>
-            <a href="../posts/">Közzétételek</a>
-            <a href="../campaign/">INTEGRÁLT Hang</a>
-            <a href="../store/">Üzletünk</a>
-            <a href="../papers/">Jogiratok</a>
-            <a href="../contact/">Kapcsolat</a>
-            <a href="https://portal.techintegrity.hu" class="portal-link">Bejelentkezés</a>
-        </nav>
-    </header>
+    <div id="site-header"></div>
     <div class="hero-section">
         <img src="https://database.techintegrity.hu/images/main-banner.png" alt="Banner">
         <div class="scroll-down-arrow" onclick="document.getElementById('info-start').scrollIntoView({behavior: 'smooth'});">
@@ -261,10 +251,17 @@
     <div id="footer-container"></div>
 
     <script>
-        fetch('https://database.techintegrity.hu/static/html/footer.html')
+        fetch('https://database.techintegrity.hu/static/html/footer.html') // FOOTER FETCH
             .then(response => response.text())
             .then(data => {
             document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+    <script>
+        fetch('https://database.techintegrity.hu/static/html/main-menu.html') // MAIN MENU FETCH
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById('site-header').innerHTML = data;
         });
     </script>
 </body>
