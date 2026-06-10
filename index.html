@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="hu" data-theme="dark">
+<head>
+	<!-- TECHINTEGRITY (FINAL UPDATE, RELEASED AT 2026. 06. 10.) /// WWW.TECHINTEGRITY.HU -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechIntegrity Kezdeményezési Projekt</title>
+  <meta name="description" content="A TechIntegrity Solutions Zrt. fiktív szatíra volt és nem egy valódi gazdasági vállalat. A honlap megszűnt, és ez a végső búcsúoldal.">
+	<!-- EMBED SYSTEM -->
+	<meta name="description" content="A TechIntegrity Solutions Zrt. fiktív szatíra volt és nem egy valódi gazdasági vállalat. A honlap megszűnt, és ez a végső búcsúoldal.">
+	<meta name="theme-color" content="#00a2e8">
+	<meta property="og:url" content="https://www.techintegrity.hu">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="TechIntegrity Kezdeményezési Projekt">
+	<meta property="og:description" content="A TechIntegrity Solutions Zrt. fiktív szatíra volt és nem egy valódi gazdasági vállalat. A honlap megszűnt, és ez a végső búcsúoldal.">
+	<meta property="og:image" content="https://database.techintegrity.hu/logos/tis-hero.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="twitter:domain" content="techintegrity.hu">
+	<meta property="twitter:url" content="https://www.techintegrity.hu">
+	<meta name="twitter:title" content="TechIntegrity Kezdeményezési Projekt">
+	<meta name="twitter:description" content="A TechIntegrity Solutions Zrt. fiktív szatíra volt és nem egy valódi gazdasági vállalat. A honlap megszűnt, és ez a végső búcsúoldal.">
+	<meta name="twitter:image" content="https://database.techintegrity.hu/logos/tis-hero.png">
+	
+  <style>
+    :root {
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl:  clamp(2.5rem, 1rem + 4vw, 5rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;
+      --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
+      --space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;
+      --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;
+      --radius-xl:1rem;--radius-2xl:1.5rem;--radius-full:9999px;
+      --font-display:"Cabinet Grotesk","Georgia",sans-serif;
+      --font-body:"Satoshi","Inter",sans-serif;
+      --transition-interactive:180ms cubic-bezier(0.16,1,0.3,1);
+      --content-narrow:640px;--content-default:960px;--content-wide:1200px;
+    }
+    :root,[data-theme="light"]{
+      --color-bg:#f4f4f6;--color-surface:#ffffff;--color-surface-2:#f8f8fa;
+      --color-surface-offset:#ebebed;--color-divider:#e0e0e4;
+      --color-border:rgba(0,0,0,0.09);--color-text:#141418;
+      --color-text-muted:#52525c;--color-text-faint:#a0a0aa;
+      --color-text-inverse:#ffffff;--color-primary:#34A9DE;
+      --color-primary-hover:#2696C9;--color-primary-active:#156D94;
+      --color-primary-light:rgba(0,87,184,0.08);
+      --color-primary-border:rgba(0,87,184,0.22);
+      --shadow-sm:0 1px 3px rgba(0,0,0,.07),0 1px 2px rgba(0,0,0,.04);
+      --shadow-md:0 4px 16px rgba(0,0,0,.09),0 2px 6px rgba(0,0,0,.05);
+      --shadow-lg:0 12px 40px rgba(0,0,0,.11),0 4px 12px rgba(0,0,0,.06);
+    }
+    [data-theme="dark"]{
+      --color-bg:#0e0e12;--color-surface:#17171e;--color-surface-2:#1e1e27;
+      --color-surface-offset:#0b0b0f;--color-divider:#252530;
+      --color-border:rgba(255,255,255,0.07);--color-text:#e8e8f0;
+      --color-text-muted:#8888a0;--color-text-faint:#444458;
+      --color-text-inverse:#0e0e12;--color-primary:#00a2e8;
+      --color-primary-hover:#26B7F0;--color-primary-active:#0081B8;
+      --color-primary-light:rgba(74,143,232,0.10);
+      --color-primary-border:rgba(74,143,232,0.28);
+      --shadow-sm:0 1px 3px rgba(0,0,0,.35);
+      --shadow-md:0 4px 16px rgba(0,0,0,.45);
+      --shadow-lg:0 12px 40px rgba(0,0,0,.55);
+    }
+    @media(prefers-color-scheme:dark){:root:not([data-theme]){
+      --color-bg:#0e0e12;--color-surface:#17171e;--color-surface-2:#1e1e27;
+      --color-surface-offset:#0b0b0f;--color-divider:#252530;
+      --color-border:rgba(255,255,255,0.07);--color-text:#e8e8f0;
+      --color-text-muted:#8888a0;--color-text-faint:#444458;
+      --color-text-inverse:#0e0e12;--color-primary:#00a2e8;
+      --color-primary-hover:#26B7F0;--color-primary-active:#0081B8;
+      --color-primary-light:rgba(74,143,232,0.10);
+      --color-primary-border:rgba(74,143,232,0.28);
+      --shadow-sm:0 1px 3px rgba(0,0,0,.35);
+      --shadow-md:0 4px 16px rgba(0,0,0,.45);
+      --shadow-lg:0 12px 40px rgba(0,0,0,.55);
+    }}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+    body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background-color:var(--color-bg);line-height:1.6;display:flex;flex-direction:column}
+    img{display:block;max-width:100%;height:auto}
+    h1,h2,h3,h4{text-wrap:balance;line-height:1.15;font-family:var(--font-display)}
+    p{text-wrap:pretty;max-width:72ch}
+    a,button{transition:color var(--transition-interactive),background var(--transition-interactive),border-color var(--transition-interactive),opacity var(--transition-interactive)}
+    button{cursor:pointer;border:none;background:none;font:inherit}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+
+    /* ── HEADER ── */
+    .site-header{position:sticky;top:0;z-index:100;background:var(--color-bg);border-bottom:1px solid var(--color-border);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .header-inner{max-width:var(--content-wide);margin-inline:auto;padding:var(--space-4) var(--space-6);display:flex;align-items:center;justify-content:space-between}
+    .header-logo{display:flex;align-items:center;gap:var(--space-3);text-decoration:none;color:inherit}
+    .header-logo-text{font-family:var(--font-display);font-weight:800;font-size:var(--text-lg);letter-spacing:-.01em}
+    .logo-tech{color:var(--color-primary)}.logo-integrity{color:var(--color-text)}
+    .header-actions{display:flex;align-items:center;gap:var(--space-3)}
+    .theme-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:var(--radius-full);color:var(--color-text-muted);border:1px solid var(--color-border)}
+    .theme-toggle:hover{color:var(--color-primary);border-color:var(--color-primary-border)}
+    .shutdown-badge{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-1) var(--space-3);background:rgba(192,57,43,0.12);border:1px solid rgba(192,57,43,0.25);color:#c0392b;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+    [data-theme="dark"] .shutdown-badge{background:rgba(255,80,60,0.10);border-color:rgba(255,80,60,0.22);color:#ff6b5b}
+    .shutdown-dot{width:6px;height:6px;border-radius:50%;background:currentColor;animation:pulse-dot 2s ease-in-out infinite}
+    @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.3}}
+
+    /* ── HERO ── */
+    .hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(var(--space-16),10vw,var(--space-24)) var(--space-6);position:relative;overflow:hidden}
+    .hero-bg-glow{position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(0,162,232,.07) 0%,transparent 70%)}
+    [data-theme="light"] .hero-bg-glow{background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(52,169,222,.08) 0%,transparent 70%)}
+    .hero-content{position:relative;z-index:1;max-width:780px}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-2) var(--space-4);background:var(--color-primary-light);border:1px solid var(--color-primary-border);border-radius:var(--radius-full);color:var(--color-primary);font-size:var(--text-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:var(--space-8);animation:fade-up .6s ease both}
+    .hero-title{font-size:var(--text-3xl);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:var(--space-6);animation:fade-up .6s .1s ease both}
+    .hero-title .accent{color:var(--color-primary)}
+    .hero-subtitle{font-size:var(--text-lg);color:var(--color-text-muted);max-width:56ch;margin-inline:auto;margin-bottom:var(--space-10);animation:fade-up .6s .2s ease both}
+    @keyframes fade-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .offline-icon-wrap{margin-bottom:var(--space-8);animation:fade-up .5s ease both}
+    .offline-icon-ring{width:100px;height:100px;border-radius:50%;background:var(--color-surface);border:1px solid var(--color-border);box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center;margin-inline:auto;position:relative}
+    .offline-icon-ring::before{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px dashed var(--color-primary-border);animation:spin-slow 20s linear infinite}
+    @keyframes spin-slow{to{transform:rotate(360deg)}}
+
+    /* ── FICTION BANNER ── */
+    .fiction-banner{background:rgba(192,57,43,0.08);border-top:2px solid rgba(192,57,43,0.3);border-bottom:2px solid rgba(192,57,43,0.3);padding:var(--space-4) var(--space-6);text-align:center}
+    [data-theme="dark"] .fiction-banner{background:rgba(255,80,60,0.07);border-color:rgba(255,80,60,0.25)}
+    .fiction-banner-inner{max-width:var(--content-default);margin-inline:auto;display:flex;align-items:center;justify-content:center;gap:var(--space-3);flex-wrap:wrap}
+    .fiction-banner p{font-size:var(--text-sm);color:#c0392b;font-weight:600;max-width:none}
+    [data-theme="dark"] .fiction-banner p{color:#ff8070}
+
+    /* ── SECTION SHARED ── */
+    .section-label{display:flex;align-items:center;justify-content:center;text-align:center;font-size:var(--text-xs);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-primary);margin-bottom:var(--space-4);width:100%;max-width:none;margin-inline:auto}
+    .section-title{text-align:center;font-size:var(--text-2xl);font-weight:800;letter-spacing:-.02em;margin-bottom:var(--space-12)}
+    .section-header{max-width:var(--content-default);margin-inline:auto;margin-bottom:var(--space-8)}
+
+    /* ── CARDS ── */
+    .cards-section{padding:clamp(var(--space-12),6vw,var(--space-20)) var(--space-6);background:var(--color-surface);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border)}
+    .cards-inner{max-width:1000px;margin-inline:auto;display:grid;gap:var(--space-4);grid-template-columns:repeat(auto-fill,minmax(min(270px,100%),1fr))}
+    .card{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);box-shadow:var(--shadow-sm);transition:box-shadow var(--transition-interactive),transform var(--transition-interactive)}
+    .card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+    .card-icon{width:44px;height:44px;border-radius:var(--radius-lg);background:var(--color-primary-light);border:1px solid var(--color-primary-border);display:flex;align-items:center;justify-content:center;color:var(--color-primary);margin-bottom:var(--space-4)}
+    .card-title{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-2)}
+    .card-body{color:var(--color-text-muted);font-size:var(--text-sm);line-height:1.65}
+
+    /* ── TIMELINE ── */
+    .timeline-section{padding:clamp(var(--space-12),6vw,var(--space-20)) var(--space-6)}
+    .timeline{max-width:680px;margin-inline:auto;display:flex;flex-direction:column;gap:var(--space-8);position:relative}
+    .timeline::before{content:"";position:absolute;left:19px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--color-primary),var(--color-divider))}
+    .timeline-item{display:flex;gap:var(--space-5);align-items:flex-start}
+    .timeline-dot{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--color-surface);border:2px solid var(--color-primary);display:flex;align-items:center;justify-content:center;color:var(--color-primary);z-index:1}
+    .timeline-dot.muted{border-color:var(--color-divider);color:var(--color-text-faint)}
+    .tl-meta{font-size:var(--text-xs);color:var(--color-text-faint);letter-spacing:.05em;text-transform:uppercase;font-weight:600;margin-bottom:var(--space-1)}
+    .tl-title{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-1)}
+    .tl-desc{color:var(--color-text-muted);font-size:var(--text-sm);line-height:1.65}
+
+    /* ── INTEGRÁLT HANG SECTION ── */
+    .ih-section{padding:clamp(var(--space-12),6vw,var(--space-20)) var(--space-6);background:var(--color-surface);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border)}
+    .ih-inner{max-width:var(--content-default);margin-inline:auto}
+    .ih-cards{display:grid;gap:var(--space-4);grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));margin-top:var(--space-8)}
+    .ih-card{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:calc(var(--space-6) + var(--space-2)) var(--space-6) var(--space-6);position:relative;overflow:hidden;display:flex;flex-direction:column;gap:var(--space-3)}
+    .ih-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--color-primary),transparent)}
+    .ih-edition{display:inline-flex;align-items:center;align-self:flex-start;gap:var(--space-2);padding:var(--space-1) var(--space-3);background:var(--color-primary-light);border:1px solid var(--color-primary-border);color:var(--color-primary);border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 var(--space-3) 0;line-height:1.25;position:relative;z-index:1}
+    .ih-card h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin:0;line-height:1.2;padding-top:var(--space-1)}
+    .ih-card p{color:var(--color-text-muted);font-size:var(--text-sm);line-height:1.65;margin:0}
+    .ih-fiction-label{display:inline-flex;align-items:center;gap:var(--space-1);margin-top:var(--space-3);font-size:var(--text-xs);color:#c0392b;font-weight:600}
+    [data-theme="dark"] .ih-fiction-label{color:#ff8070}
+    .ih-szorolap-note{margin-top:var(--space-6);padding:var(--space-4) var(--space-5);background:var(--color-surface-offset);border:1px solid var(--color-border);border-radius:var(--radius-lg);font-size:var(--text-sm);color:var(--color-text-muted)}
+    .ih-szorolap-note strong{color:var(--color-text)}
+
+    /* ── CONFESSION ── */
+    .confession-section{padding:clamp(var(--space-12),6vw,var(--space-20)) var(--space-6)}
+    .confession-box{max-width:720px;margin-inline:auto;border:1px solid var(--color-primary-border);border-radius:var(--radius-2xl);background:var(--color-primary-light);padding:clamp(var(--space-6),4vw,var(--space-12));text-align:center}
+    .confession-emoji{font-size:3rem;margin-bottom:var(--space-4)}
+    .confession-title{font-size:var(--text-xl);font-weight:800;letter-spacing:-.02em;margin-bottom:var(--space-4);font-family:var(--font-display)}
+    .confession-text{color:var(--color-text-muted);font-size:var(--text-base);max-width:56ch;margin-inline:auto;line-height:1.7}
+    .confession-text strong{color:var(--color-text)}
+
+    /* ── FINAL DOCUMENT ── */
+    .finaldoc-section{padding:clamp(var(--space-12),6vw,var(--space-20)) var(--space-6);background:var(--color-surface);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border)}
+    .finaldoc-inner{max-width:720px;margin-inline:auto}
+    .finaldoc-box{border:1px solid var(--color-border);border-radius:var(--radius-2xl);background:var(--color-surface-2);overflow:hidden}
+    .finaldoc-header{padding:var(--space-5) var(--space-6);border-bottom:1px solid var(--color-border);display:flex;align-items:center;gap:var(--space-4)}
+    .finaldoc-icon{width:44px;height:44px;border-radius:var(--radius-lg);background:rgba(192,57,43,0.10);border:1px solid rgba(192,57,43,0.25);display:flex;align-items:center;justify-content:center;color:#c0392b;flex-shrink:0}
+    [data-theme="dark"] .finaldoc-icon{background:rgba(255,80,60,0.08);border-color:rgba(255,80,60,0.22);color:#ff8070}
+    .finaldoc-header-text h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:2px}
+    .finaldoc-header-text p{font-size:var(--text-xs);color:var(--color-text-faint)}
+    .finaldoc-body{padding:var(--space-6)}
+    .finaldoc-body p{color:var(--color-text-muted);font-size:var(--text-sm);line-height:1.7;margin-bottom:var(--space-4)}
+    .finaldoc-fiction-warning{display:flex;align-items:flex-start;gap:var(--space-3);padding:var(--space-4);background:rgba(192,57,43,0.07);border:1px solid rgba(192,57,43,0.2);border-radius:var(--radius-lg);margin-bottom:var(--space-5)}
+    [data-theme="dark"] .finaldoc-fiction-warning{background:rgba(255,80,60,0.06);border-color:rgba(255,80,60,0.18)}
+    .finaldoc-fiction-warning svg{flex-shrink:0;color:#c0392b;margin-top:2px}
+    [data-theme="dark"] .finaldoc-fiction-warning svg{color:#ff8070}
+    .finaldoc-fiction-warning p{color:#c0392b;font-size:var(--text-xs);font-weight:600;margin:0;max-width:none}
+    [data-theme="dark"] .finaldoc-fiction-warning p{color:#ff8070}
+    .btn-doc{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-5);background:var(--color-primary);color:var(--color-text-inverse);border-radius:var(--radius-lg);font-weight:700;font-size:var(--text-sm);text-decoration:none;transition:background var(--transition-interactive),transform var(--transition-interactive),box-shadow var(--transition-interactive)}
+    .btn-doc:hover{background:var(--color-primary-hover);transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,87,184,.35)}
+
+    /* ── QUOTE ── */
+    .quote-section{padding:clamp(var(--space-12),6vw,var(--space-20)) var(--space-6)}
+    blockquote{max-width:680px;margin-inline:auto;border-left:3px solid var(--color-primary);padding-left:var(--space-6)}
+    blockquote p{font-size:var(--text-lg);font-style:italic;color:var(--color-text-muted);margin-bottom:var(--space-3)}
+    blockquote cite{font-size:var(--text-sm);font-style:normal;color:var(--color-text-faint);letter-spacing:.04em;text-transform:uppercase}
+
+    /* ── FOOTER ── */
+    .site-footer{background:var(--color-surface-offset);border-top:1px solid var(--color-border);padding:clamp(var(--space-8),4vw,var(--space-16)) var(--space-6);text-align:center}
+    .footer-inner{max-width:var(--content-narrow);margin-inline:auto}
+    .footer-logo-text{font-family:var(--font-display);font-weight:800;font-size:var(--text-lg);margin-bottom:var(--space-2)}
+    .footer-tagline{color:var(--color-text-muted);font-size:var(--text-sm);margin-bottom:var(--space-6)}
+    .footer-divider{border:none;border-top:1px solid var(--color-divider);margin-block:var(--space-6)}
+    .footer-bottom{font-size:var(--text-xs);color:var(--color-text-faint);line-height:1.8}
+
+    /* ── STRIKE ANIM ── */
+    .strike-through{position:relative;display:inline-block}
+    .strike-through::after{content:"";position:absolute;left:0;right:0;top:50%;height:3px;background:var(--color-primary);transform:scaleX(0);transform-origin:left;animation:strike .8s .8s cubic-bezier(0.16,1,0.3,1) forwards}
+    @keyframes strike{to{transform:scaleX(1)}}
+
+    /* ── STATS ROW ── */
+    .stats-row{display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:center;margin-top:var(--space-8)}
+    .stat-box{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-5) var(--space-6);text-align:center;min-width:140px;flex:1}
+    .stat-num{font-family:var(--font-display);font-weight:800;font-size:var(--text-2xl);color:var(--color-primary);line-height:1}
+    .stat-label{font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-2);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+
+    @media(max-width:600px){
+      .header-inner{padding:var(--space-3) var(--space-4)}
+      .header-logo-text{display:none}
+      .timeline::before{left:15px}
+      .timeline-dot{width:32px;height:32px}
+      .stats-row{gap:var(--space-2)}
+    }
+  </style>
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet"> <!-- FONTING SYSTEM -->
+</head>
+<body>
+  <a href="#main-content" class="sr-only">Ugrás a tartalomhoz</a>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="#" class="header-logo" aria-label="TechIntegrity főoldal">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="var(--color-primary)" opacity="0.12"/>
+          <path d="M8 16 L14 10 L20 16 L14 22 Z" stroke="var(--color-primary)" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+          <path d="M16 8 L24 16 L16 24" stroke="var(--color-primary)" stroke-width="1.8" fill="none" stroke-linejoin="round" opacity="0.5"/>
+        </svg>
+        <span class="header-logo-text">
+          <span class="logo-tech">Tech</span><span class="logo-integrity">Integrity</span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <span class="shutdown-badge">
+          <span class="shutdown-dot" aria-hidden="true"></span>
+          Leállítva · 2026.06.07.
+        </span>
+        <button class="theme-toggle" data-theme-toggle aria-label="Téma váltása">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- FICTION BANNER -->
+  <div class="fiction-banner" role="alert">
+    <div class="fiction-banner-inner">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" style="color:#c0392b;flex-shrink:0"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <p>⚠ Ez az oldal egy <strong>fiktív szatírát</strong> dokumentál. A TechIntegrity Solutions Zrt. sosem létezett valódi gazdasági társaságként. Minden tartalom kitalált.</p>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg-glow" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="offline-icon-wrap">
+          <div class="offline-icon-ring">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M4.93 4.93 19.07 19.07"/>
+            </svg>
+          </div>
+        </div>
+        <div class="hero-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          Hivatalos közlemény - 2026. június 7.
+        </div>
+        <h1 class="hero-title">
+          A <span class="accent">TechIntegrity</span><br>
+          <span class="strike-through">Solutions Zrt.</span> végleg bezárt.
+        </h1>
+        <p class="hero-subtitle">
+          A RAM- és SSD-árak elleni harc elbukott. A weboldal, az INTEGRÁLT Hang kampány
+          és a petíció megszűnt. A cég soha nem létezett - ez a lezárás dokumentációja.
+        </p>
+        <div class="stats-row" aria-label="Kulcsszámok">
+          <div class="stat-box">
+            <div class="stat-num">8</div>
+            <div class="stat-label">petíció aláírás<br>(10 000 célból)</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">2</div>
+            <div class="stat-label">INTEGRÁLT Hang<br>kiadás</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">164 nap</div>
+            <div class="stat-label">A "cég" megszűnéséig</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">0 Ft</div>
+            <div class="stat-label">valódi gazdasági<br>tevékenység</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MI VOLT EZ? - CARDS -->
+    <section class="cards-section" aria-labelledby="cards-heading">
+      <div class="section-header">
+		<p class="section-label">Áttekintés</p>
+        <h2 class="section-title" id="cards-heading">Mi volt a TechIntegrity?</h2>
+      </div>
+      <div class="cards-inner">
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="card-title">Fiktív szatíra</h3>
+          <p class="card-body">A TechIntegrity Solutions Zrt. sosem volt bejegyzett gazdasági társaság. Egy kísérlet volt: hogyan néz ki egy teljesen kitalált, de meggyőző tech-szervezet digitális jelenléte.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>
+          </div>
+          <h3 class="card-title">A RAM-drágulás valódi - a harc nem</h3>
+          <p class="card-body">A DDR5 RAM és SSD valóban drága. Az INTEGRÁLT Hang kampány és a Három Pont terv azonban kitalált narratíva volt - nem állt mögötte semmilyen valódi vállalati vagy aktivista erő.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3 class="card-title">Fizikai terjesztés is volt</h3>
+          <p class="card-body">Az INTEGRÁLT Hang kiadványokat és A5-ös szórólapokat fizikailag is terjesztettük, postaládákba dobáltuk. Ebből lett baj - a lakosság zaklattásra panaszkodott, ezért abbahagytuk.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="card-title">Fiktív személyek (többségben), fiktív pozíciók</h3>
+          <p class="card-body">Horváth Kevin (CEO), Bányai István (CFO), Király Tamás (CTO), Tömör József (COO), Szalai Ákos (tanácsadó) - "céges" értelemben mind kitalált karakterek. Senki nem sérült, valódi személy nem szerepel Horváth Kevinen kívül (aki a valódi agytröszt a fiktív projekt mellett).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTEGRÁLT HANG SECTION -->
+    <section class="ih-section" aria-labelledby="ih-heading">
+      <div class="ih-inner">
+        <p class="section-label">Propaganda</p>
+        <h2 class="section-title" id="ih-heading">Az INTEGRÁLT Hang kampány</h2>
+        <p style="text-align:center;color:var(--color-text-muted);max-width:60ch;margin-inline:auto;font-size:var(--text-sm);">
+          A TechIntegrity propagandakiadványa volt az <em>INTEGRÁLT Hang</em> - fiktív újság, amelyet
+          fizikailag is terjesztettünk. Két szám jelent meg, 2026 április-május között.
+          <strong style="color:var(--color-text);">Mindkettő teljesen kitalált tartalom.</strong>
+        </p>
+        <div class="ih-cards">
+          <div class="ih-card">
+            <div class="ih-edition">INTEGRÁLT Hang 01 · 2026. április</div>
+            <h3>"A RAM-drágulás a kárunkra van!"</h3>
+            <p>Az első szám a DDR4/DDR5 RAM-ok árdrágulásáról szólt, Horváth Kevin állásfoglalásával. Tartalmazta a fiktív cég bemutatóját és a Három Pont terv első emlegetését. QR-kóddal irányított a petíciós oldalra.</p>
+            <div class="ih-fiction-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+              Fiktív kiadvány - nem valódi sajtótermék
+            </div>
+          </div>
+          <div class="ih-card">
+            <div class="ih-edition">INTEGRÁLT Hang 02 · 2026. május</div>
+            <h3>"Az SSD-krízist sem hagyjuk figyelmen kívül!"</h3>
+            <p>A második szám az SSD-árakat is bevette a kampányba. Eurostat-adatokra hivatkozó grafikont tartalmazott a high-tech foglalkoztatottságról, Király Tamás és Bányai István fiktív idézeteivel. Ugyancsak QR-kód irányított a webre.</p>
+            <div class="ih-fiction-label">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+              Fiktív kiadvány - nem valódi sajtótermék
+            </div>
+          </div>
+        </div>
+        <div class="ih-szorolap-note">
+          <strong>Petíciós szórólapok (A5):</strong> Az INTEGRÁLT Hang kampány részeként A5-ös szórólapokat is terjesztettünk, amelyek a peticio.techintegrity.hu oldalra irányítottak. Ezeket fizikailag postaládákba dobáltuk - <em>ez volt az a tevékenység, amelyből baj lett.</em> A petíció 10&nbsp;000 aláírás helyett mindössze <strong>8 aláírást</strong> gyűjtött, és megszűnt.
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline-section" aria-labelledby="timeline-heading">
+      <p class="section-label">Eseménytörténet</p>
+      <h2 class="section-title" id="timeline-heading">Ami történt - kronológia</h2>
+      <div class="timeline" role="list">
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-dot" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div>
+            <p class="tl-meta">2025. december 25.</p>
+            <p class="tl-title">A TechIntegrity Solutions Zrt. "alapítása"</p>
+            <p class="tl-desc">Megjelenik a weboldal, a brand és a fiktív vállalati struktúra. A Három Pont terv (társadalmi, gazdasági, kül- és belpolitikai célok) megfogalmazódik.</p>
+          </div>
+        </div>
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-dot" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+          </div>
+          <div>
+            <p class="tl-meta">2026. január</p>
+            <p class="tl-title">THFA létrehozása - Három Pont teljesül</p>
+            <p class="tl-desc">A TechIntegrity Hivatalos Felügyelési Auditórium (THFA) megalapítása. Február 1-jén - 38 nappal az alapítás után - a Három Pont terv megvalósult. Belső dokumentumok, jogiratok készültek (mind fiktívek).</p>
+          </div>
+        </div>
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-dot" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div>
+            <p class="tl-meta">2026. március</p>
+            <p class="tl-title">Q1-es eredmények, 121%-os "növekedés"</p>
+            <p class="tl-desc">A fiktív Q1-es pénzügyi beszámoló megjelenik. A kitalált adatok szerint 121%-os növekedés volt az első negyedévben. Közben a petíciós oldal és az INTEGRÁLT Hang kampány indul.</p>
+          </div>
+        </div>
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-dot" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <p class="tl-meta">2026. április-május</p>
+            <p class="tl-title">INTEGRÁLT Hang 01-02 és szórólapok</p>
+            <p class="tl-desc">Fizikai terjesztés: az INTEGRÁLT Hang újságokat és A5-ös szórólapokat postaládákba dobáltuk. A kampány hatástalan maradt és panaszokat váltott ki - abbahagytuk.</p>
+          </div>
+        </div>
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-dot" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div>
+            <p class="tl-meta">2026. május-június eleje</p>
+            <p class="tl-title">Összeomlás és felismerés</p>
+            <p class="tl-desc">A projekt eléggé meggyőzőre sikerült ahhoz, hogy valódi következményei lehettek volna. A petíció csupán 8 aláírást gyűjtött, a kampány bukott. A weboldal leállításra kerül.</p>
+          </div>
+        </div>
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-dot muted" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <p class="tl-meta">2026. június 7. · Végső lezárás</p>
+            <p class="tl-title">Záró "csőd" és megszűnés deklarálása</p>
+            <p class="tl-desc">A fiktív narratíván belül a vállalat "csődbe ment". A valóságban: a weboldal leállt, a kampányok megszűntek, a projekt lezárult. Ez a búcsúoldal és a Végső Vezetőségi Beszámoló az egyértelmű, nyilvános lezárás.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL DOCUMENT -->
+    <section class="finaldoc-section" aria-labelledby="finaldoc-heading">
+      <div class="finaldoc-inner">
+        <p class="section-label">Záródokumentum</p>
+        <h2 class="section-title" id="finaldoc-heading">Végső Vezetőségi Beszámoló</h2>
+        <div class="finaldoc-box">
+          <div class="finaldoc-header">
+            <div class="finaldoc-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div class="finaldoc-header-text">
+              <h3>VÉGSŐ VEZETŐSÉGI BESZÁMOLÓ - ZÁRÓ ÜLÉS</h3>
+              <p>Iktatószám: TIS-2026/06-01 · Dátum: 2026. június 7. · Kaposvár, TechIntegrity Központ</p>
+            </div>
+          </div>
+          <div class="finaldoc-body">
+            <div class="finaldoc-fiction-warning">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <p>⚠ Ez egy FIKTÍV dokumentum. A benne leírt "csőd", gazdasági adatok és személyek kitaláltak. A vállalat nem létezett, ezért valódi csőd sem következett be. Ami igaz: a weboldal leállt és a kampányok megszűntek.</p>
+            </div>
+            <p>
+              Ez az utolsó kiadott dokumentum a fiktív TechIntegrity narratívában. A záró ülés leírja
+              az INTEGRÁLT Hang kampány és a petíció teljes kudarcát (8 aláírás 10 000-ből),
+              a Három Pont terv megszűnését, valamint az összes fiktív testület - THFA, TVD, TPK -
+              feloszlatását. A dokumentum a projekt vége és a lezárás deklarálása.
+            </p>
+            <a href="https://database.techintegrity.hu/pdfs/final-meeting.pdf"
+               target="_blank" rel="noopener noreferrer"
+               class="btn-doc">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Dokumentum megtekintése (PDF)
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFESSION -->
+    <section class="confession-section" aria-labelledby="confession-heading">
+      <div class="confession-box">
+        <h2 class="confession-title" id="confession-heading">Tájékoztatás a projekt természetéről</h2>
+        <p class="confession-text">
+          A <strong>TechIntegrity Solutions Zrt.</strong> nem létező gazdasági társaság.
+          A <strong>Három Pont terv</strong> nem valódi gazdasági program.
+          Az <strong>INTEGRÁLT Hang</strong> nem valódi sajtótermék.
+          A dokumentumokban szereplő vezetői nevek és pozíciók a fiktív narratíva részei.
+          A dokumentumokban szereplő <strong>csőd</strong> szintén fiktív, mivel maga a cég sem létezett valós vállalatként.
+          <br><br>
+          Ami ténylegesen megtörtént: a fizikai terjesztés lezárult, a weboldal leállításra került,
+          és a teljes projekt megszűnt.
+        </p>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-section" aria-label="Záró idézet">
+      <blockquote>
+        <p>"A TechIntegrity Solutions Zrt. a mai nappal becsődült, minden működését beszüntetve megszűnt létezni. A Három Pont megszűnt, az INTEGRÁLT Hang kampány elbukott, a petíciónk és a weboldalaink pedig véglegesen lekapcsolásra kerültek."</p>
+        <cite>- Horváth Kevin "vezérigazgató", Végső Vezetőségi Beszámoló (fiktív, 2026. június 7.)</cite>
+      </blockquote>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo-text">
+        <span class="logo-tech">Tech</span><span class="logo-integrity">Integrity</span>
+      </div>
+      <p class="footer-tagline">Fiktív szatíra · Soha nem volt valódi vállalat</p>
+      <hr class="footer-divider">
+      <div class="footer-bottom">
+        <p>&copy; 2025-2026 TechIntegrity Kezdeményezési Projekt az Informatikai Drágulás Ellen (Megszűnt)</p>
+        <p style="margin-top:var(--space-2)">Minden tartalom kitalált és szatirikus jellegű · Jogi felelősség kizárva</p>
+      </div>
+    </div>
+  </footer>
+
+	<script>
+	(function () {
+		const t = document.querySelector('[data-theme-toggle]');
+		const r = document.documentElement;
+		const savedTheme = localStorage.getItem('theme');
+		let d = savedTheme === 'light' || savedTheme === 'dark'
+			? savedTheme
+			: (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+		function setTheme(mode) {
+			r.setAttribute('data-theme', mode);
+			localStorage.setItem('theme', mode);
+			setIcon(mode);
+		}
+		function setIcon(mode) {
+			if (!t) return;
+			t.setAttribute('aria-label', `Váltás ${mode === 'dark' ? 'világos' : 'sötét'} módra`);
+			t.innerHTML = mode === 'dark'
+				? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`
+				: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+		}
+		r.setAttribute('data-theme', d);
+		setIcon(d);
+		if (t) {
+			t.addEventListener('click', () => {
+				d = r.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+				setTheme(d);
+			});
+		}
+	})();
+	</script>
+</body>
+</html>
